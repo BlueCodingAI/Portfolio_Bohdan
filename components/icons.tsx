@@ -65,7 +65,81 @@ export function LinkedInIcon({ size = 20, className }: IconProps) {
   );
 }
 
+/** Freelancer.com mark — path from Simple Icons (CC0). */
+export function FreelancerIcon({ size = 20, className }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76 4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548 3.643-3.57 1.13-6.652-4.439-.228Z" />
+    </svg>
+  );
+}
+
 /* ------------------------------------------------------------- general --- */
+
+export const StarIcon = ({ size = 20, className }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z" />
+  </svg>
+);
+
+export const QuoteIcon = ({ size = 20, className }: IconProps) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M4.6 19.5c-1.3-1.2-2.1-2.8-2.1-5 0-3.9 2.6-7.3 6.6-9.2l.9 1.4c-2.5 1.5-3.9 3.3-4.2 5.4.4-.2.9-.3 1.5-.3 1.9 0 3.3 1.4 3.3 3.3 0 2-1.5 3.5-3.5 3.5-1 0-1.9-.4-2.5-1.1Zm11 0c-1.3-1.2-2.1-2.8-2.1-5 0-3.9 2.6-7.3 6.6-9.2l.9 1.4c-2.5 1.5-3.9 3.3-4.2 5.4.4-.2.9-.3 1.5-.3 1.9 0 3.3 1.4 3.3 3.3 0 2-1.5 3.5-3.5 3.5-1 0-1.9-.4-2.5-1.1Z" />
+  </svg>
+);
+
+export const ShieldCheckIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" />
+    <path d="m8.8 12.2 2.3 2.3 4.2-4.4" />
+  </Stroke>
+);
+
+export const ExpandIcon = (p: IconProps) => (
+  <Stroke {...p} width={2}>
+    <path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" />
+  </Stroke>
+);
+
+export const CloseIcon = (p: IconProps) => (
+  <Stroke {...p} width={2}>
+    <path d="M6 6l12 12M18 6 6 18" />
+  </Stroke>
+);
+
+export const ChevronLeftIcon = (p: IconProps) => (
+  <Stroke {...p} width={2}>
+    <path d="m15 5-7 7 7 7" />
+  </Stroke>
+);
+
+export const ChevronRightIcon = (p: IconProps) => (
+  <Stroke {...p} width={2}>
+    <path d="m9 5 7 7-7 7" />
+  </Stroke>
+);
+
+export const CalendarIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <rect x="3.5" y="5" width="17" height="15.5" rx="2.4" />
+    <path d="M8 3v4M16 3v4M3.5 10h17" />
+  </Stroke>
+);
+
+export const GlobeIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M3.5 12h17M12 3.5c2.3 2.4 3.4 5.2 3.4 8.5s-1.1 6.1-3.4 8.5c-2.3-2.4-3.4-5.2-3.4-8.5S9.7 5.9 12 3.5Z" />
+  </Stroke>
+);
+
+export const ImagesIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <rect x="6.5" y="3.5" width="14" height="12" rx="2" />
+    <path d="M3.5 8v10a2.5 2.5 0 0 0 2.5 2.5h11" />
+    <path d="m9.5 13 3-3.2 2.6 2.7 1.6-1.5 3.3 3.2" />
+  </Stroke>
+);
 
 export const DownloadIcon = (p: IconProps) => (
   <Stroke {...p}>

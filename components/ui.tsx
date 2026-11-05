@@ -11,6 +11,7 @@ import {
 } from "motion/react";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { useScramble } from "@/lib/hooks";
+import { StarIcon } from "@/components/icons";
 
 export const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -291,11 +292,14 @@ export function CountUp({
   suffix = "",
   duration = 2,
   pad = 0,
+  decimals = 0,
 }: {
   to: number;
   suffix?: string;
   duration?: number;
   pad?: number;
+  /** digits after the point, e.g. 1 for a "5.0" rating */
+  decimals?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -306,14 +310,16 @@ export function CountUp({
     const controls = animate(0, to, {
       duration,
       ease: EASE,
-      onUpdate: (v) => setValue(Math.round(v)),
+      onUpdate: (v) => setValue(v),
     });
     return () => controls.stop();
   }, [inView, to, duration]);
 
+  const text = decimals > 0 ? value.toFixed(decimals) : String(Math.round(value)).padStart(pad, "0");
+
   return (
     <span ref={ref}>
-      {String(value).padStart(pad, "0")}
+      {text}
       {suffix}
     </span>
   );
@@ -443,6 +449,41 @@ export function Pill({ children, accent }: { children: ReactNode; accent?: strin
       style={accent ? { borderColor: `${accent}33` } : undefined}
     >
       {children}
+    </span>
+  );
+}
+
+/** Five-star rating row. `pop` makes the stars spring in one by one when scrolled into view. */
+export function Stars({
+  value = 5,
+  size = 14,
+  className = "",
+  pop = false,
+}: {
+  value?: number;
+  size?: number;
+  className?: string;
+  pop?: boolean;
+}) {
+  return (
+    <span role="img" aria-label={`Rated ${value.toFixed(1)} out of 5`} className={`flex items-center gap-0.5 ${className}`}>
+      {Array.from({ length: 5 }, (_, i) => {
+        const cls = i < Math.round(value) ? "text-amber" : "text-white/15";
+        return pop ? (
+          <motion.span
+            key={i}
+            className={`inline-flex ${cls}`}
+            initial={{ scale: 0, rotate: -50 }}
+            whileInView={{ scale: 1, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 380, damping: 14, delay: 0.2 + i * 0.07 }}
+          >
+            <StarIcon size={size} />
+          </motion.span>
+        ) : (
+          <StarIcon key={i} size={size} className={cls} />
+        );
+      })}
     </span>
   );
 }

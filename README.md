@@ -38,6 +38,8 @@ summary, roles, jobs, projects, skills or contact details there and every sectio
 | Name, roles, bio, contacts, projects    | `lib/data.ts`                  |
 | Colours, glass, glow, keyframes         | `app/globals.css`              |
 | Résumé PDF (download links)             | `public/Bohdan-Andriichuk-Resume.pdf` |
+| Freelancer stats, portfolio, reviews    | `lib/data.ts` → `freelancer`, `freelanceWork`, `clientReviews` |
+| Freelancer screenshots + avatar (WebP)  | `public/freelancer/`           |
 | Hero particle shapes + shaders          | `components/ParticleMorph.tsx` |
 | Background neural network               | `components/NeuralBackground.tsx` |
 | Animated project previews               | `components/ProjectMocks.tsx`  |
@@ -45,6 +47,11 @@ summary, roles, jobs, projects, skills or contact details there and every sectio
 
 To replace the résumé, drop a new PDF at `public/Bohdan-Andriichuk-Resume.pdf` (or change
 `resume.file` in `lib/data.ts`).
+
+The current PDF is designed in [`resume/resume.html`](resume/resume.html) (two A4 pages, same
+palette and fonts as the site). To update it, edit that file, open it in Chrome → **Print** →
+**Save as PDF** with paper **A4**, margins **None** and **Background graphics** on, then save
+the result over `public/Bohdan-Andriichuk-Resume.pdf`.
 
 ## What moves
 
@@ -60,6 +67,8 @@ To replace the résumé, drop a new PDF at `public/Bohdan-Andriichuk-Resume.pdf`
 - **Journey** — a timeline spine that fills (with a comet head) as you scroll.
 - **Work** — animated product previews: an AI chat that resizes across desktop / tablet /
   mobile, and an AI video studio that types a prompt, renders and plays a clip.
+- **Freelance** — Freelancer.com profile card, counting stats and rating bars, a portfolio
+  gallery that opens in a keyboard-friendly lightbox, and masonry client reviews.
 - **Approach** — on desktop the section pins and scrolls sideways.
 - **Contact** — copy-to-clipboard channels and a quick-message form that opens the visitor's
   mail app (nothing is stored).

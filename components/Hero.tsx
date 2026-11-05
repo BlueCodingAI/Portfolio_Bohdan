@@ -10,13 +10,15 @@ import {
 } from "motion/react";
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { contact, profile, resume } from "@/lib/data";
+import { contact, freelancer, profile, resume, stats } from "@/lib/data";
 import { useIntroDone, useScramble } from "@/lib/hooks";
-import { EASE, MagneticButton, Twinkle } from "@/components/ui";
+import { EASE, MagneticButton, Stars, Twinkle } from "@/components/ui";
 import type { MorphCommand } from "@/components/ParticleMorph";
 import {
   ArrowRightIcon,
+  ArrowUpRightIcon,
   DownloadIcon,
+  FreelancerIcon,
   LinkedInIcon,
   MailIcon,
   MapPinIcon,
@@ -176,16 +178,32 @@ export default function Hero() {
           initial="hidden"
           animate={ready ? "show" : "hidden"}
         >
-          <motion.div
-            variants={fadeUp}
-            custom={0.1}
-            className="inline-flex items-center gap-3 rounded-full glass px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-mist"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 animate-pulse-ring" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+          <motion.div variants={fadeUp} custom={0.1} className="flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center gap-3 rounded-full glass px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] text-mist">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 animate-pulse-ring" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              Available for new projects
             </span>
-            Available for new projects
+
+            {/* social proof — links straight to the Freelancer profile */}
+            <a
+              href={freelancer.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`Rated ${freelancer.rating.toFixed(1)} from ${freelancer.reviewCount} reviews on Freelancer — view profile`}
+              className="group inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-[12px] text-mist transition-colors duration-300 hover:text-snow"
+            >
+              <FreelancerIcon size={14} className="text-[#29b2fe]" />
+              <Stars size={11} />
+              <span className="font-semibold text-snow">{freelancer.rating.toFixed(1)}</span>
+              <span>on Freelancer</span>
+              <ArrowUpRightIcon
+                size={12}
+                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            </a>
           </motion.div>
 
           <motion.p
@@ -255,10 +273,14 @@ export default function Hero() {
               {profile.city}
             </span>
             <span className="hidden h-3 w-px bg-white/15 sm:block" />
-            <span>6+ years shipping AI &amp; web products</span>
+            <span>
+              {stats[0].value}
+              {stats[0].suffix} years shipping AI &amp; web products
+            </span>
             <span className="hidden h-3 w-px bg-white/15 sm:block" />
             <span className="flex items-center gap-2">
               {[
+                { href: contact.freelancerLink, label: "Freelancer", icon: <FreelancerIcon size={14} /> },
                 { href: contact.linkedinLink, label: "LinkedIn", icon: <LinkedInIcon size={14} /> },
                 { href: contact.telegramLink, label: "Telegram", icon: <TelegramIcon size={14} /> },
                 { href: contact.whatsappLink, label: "WhatsApp", icon: <WhatsAppIcon size={14} /> },

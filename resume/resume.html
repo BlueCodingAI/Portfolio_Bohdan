@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bohdan Andriichuk — Senior AI &amp; Full-Stack Developer — Résumé</title>
+<meta name="author" content="Bohdan Andriichuk" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Sora:wght@600;700;800&display=swap"
+  rel="stylesheet"
+/>
+<!--
+  Source for public/Bohdan-Andriichuk-Resume.pdf.
+  To re-export: open this file in Chrome → Print → Save as PDF,
+  paper A4, margins "None", "Background graphics" on.
+-->
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --ink: #0b1220;
+    --text: #2a3346;
+    --muted: #5d6982;
+    --faint: #8f9bb3;
+    --line: #e2e8f2;
+    --panel: #f4f7fc;
+    --azure: #2f6fed;
+    --ice: #10b3a6;
+    --plasma: #7c5cff;
+    --amber: #f0a20f;
+    --fl: #1aa3f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #dfe4ee; }
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    color: var(--text);
+    font-size: 8.2pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    text-rendering: geometricPrecision;
+  }
+  a { color: inherit; text-decoration: none; }
+  svg { display: block; flex-shrink: 0; }
+
+  .page {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    break-after: page;
+  }
+  .page:last-child { break-after: auto; }
+  @media screen {
+    .page { margin: 10mm auto; box-shadow: 0 10px 40px rgba(10, 16, 32, 0.18); }
+  }
+  @media print {
+    html, body { background: none; }
+  }
+
+  /* ---------------------------------------------------------------- hero */
+
+  .hero {
+    position: relative;
+    z-index: 0;
+    background: #0a1020;
+    color: #eef3ff;
+    padding: 10mm 14mm 13.5mm;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(70mm 55mm at 88% -10%, rgba(61, 139, 255, 0.55), transparent 70%),
+      radial-gradient(60mm 45mm at 4% 115%, rgba(46, 230, 214, 0.32), transparent 70%),
+      radial-gradient(70mm 50mm at 58% 130%, rgba(155, 123, 255, 0.38), transparent 70%);
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      linear-gradient(to right, rgba(140, 165, 255, 0.07) 0.25mm, transparent 0.25mm),
+      linear-gradient(to bottom, rgba(140, 165, 255, 0.07) 0.25mm, transparent 0.25mm);
+    background-size: 9mm 9mm;
+    -webkit-mask-image: radial-gradient(ellipse 75% 90% at 70% 30%, #000 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 75% 90% at 70% 30%, #000 30%, transparent 80%);
+  }
+  .accent-bar {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1.4mm;
+    z-index: 2;
+    background: linear-gradient(90deg, #2ee6d6, #3d8bff 35%, #9b7bff 70%, #ffc14d);
+  }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; gap: 8mm; }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 2mm;
+    padding: 1.1mm 3mm;
+    border: 0.25mm solid rgba(120, 150, 255, 0.35);
+    border-radius: 10mm;
+    background: rgba(13, 20, 40, 0.6);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 6.4pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #b8c3e0;
+  }
+  .status i {
+    width: 1.6mm; height: 1.6mm; border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 0 0.8mm rgba(52, 211, 153, 0.22);
+  }
+
+  .name {
+    margin-top: 4mm;
+    font-family: "Sora", sans-serif;
+    font-weight: 800;
+    font-size: 28pt;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    word-spacing: 0.14em;
+    color: #fff;
+  }
+  .name span { color: #2ee6d6; }
+  .title {
+    margin-top: 3mm;
+    font-family: "Sora", sans-serif;
+    font-weight: 600;
+    font-size: 12pt;
+    color: #eef3ff;
+    letter-spacing: -0.01em;
+  }
+  .focus {
+    margin-top: 1.6mm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm 2.4mm;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 6.8pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8fa0c8;
+  }
+  .focus b { color: #2ee6d6; font-weight: 600; }
+
+  .photo {
+    position: relative;
+    width: 30mm;
+    height: 30mm;
+    flex-shrink: 0;
+    border-radius: 50%;
+    padding: 0.9mm;
+    background: linear-gradient(135deg, #2ee6d6, #3d8bff 40%, #9b7bff 72%, #ffc14d);
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.8mm solid #0a1020;
+    display: block;
+  }
+  .photo .badge {
+    position: absolute;
+    right: 0.4mm;
+    bottom: 1.2mm;
+    display: flex;
+    align-items: center;
+    gap: 0.9mm;
+    padding: 0.8mm 2mm;
+    border-radius: 10mm;
+    background: #0a1020;
+    border: 0.3mm solid rgba(26, 163, 240, 0.7);
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 6.8pt;
+    color: #fff;
+  }
+
+  .contacts {
+    margin-top: 5.5mm;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr;
+    gap: 2.2mm 5mm;
+    font-size: 7.6pt;
+    color: #d6deef;
+  }
+  .contacts a, .contacts span {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    min-width: 0;
+    white-space: nowrap;
+  }
+  .contacts .ic {
+    width: 5.4mm; height: 5.4mm;
+    display: grid; place-items: center;
+    border-radius: 1.6mm;
+    background: rgba(61, 139, 255, 0.16);
+    border: 0.25mm solid rgba(61, 139, 255, 0.3);
+    color: #7fb2ff;
+  }
+
+  /* --------------------------------------------------------------- stats */
+
+  .stats {
+    position: relative;
+    margin: -7.5mm 14mm 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #fff;
+    border: 0.3mm solid var(--line);
+    border-radius: 3.2mm;
+    box-shadow: 0 3mm 9mm rgba(10, 16, 32, 0.1);
+    overflow: hidden;
+  }
+  .stat { padding: 3mm 4.2mm 2.7mm; background: linear-gradient(var(--c), var(--c)) no-repeat top / 100% 0.8mm; }
+  .stat + .stat { border-left: 0.3mm solid var(--line); }
+  .stat .v {
+    display: flex;
+    align-items: center;
+    gap: 1.4mm;
+    font-family: "Sora", sans-serif;
+    font-weight: 800;
+    font-size: 15pt;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .stat .v small { font-size: 9pt; color: var(--c); font-weight: 700; }
+  .stat .l {
+    margin-top: 1mm;
+    font-size: 6.8pt;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+
+  /* ---------------------------------------------------------------- body */
+
+  .body {
+    position: relative;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 58mm;
+    gap: 6.5mm;
+    padding: 6mm 14mm 0;
+    min-height: 0;
+  }
+  .page-2 .body { padding-top: 6mm; }
+
+  .h {
+    display: flex;
+    align-items: center;
+    gap: 2.4mm;
+    margin-bottom: 3.4mm;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 6.8pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--azure);
+  }
+  .h .n { color: var(--faint); }
+  .h::after {
+    content: "";
+    flex: 1;
+    height: 0.3mm;
+    background: linear-gradient(90deg, #d5ddec, rgba(213, 221, 236, 0));
+  }
+  .block + .block { margin-top: 5.2mm; }
+
+  .summary {
+    font-size: 8.3pt;
+    line-height: 1.58;
+    color: var(--text);
+  }
+  .summary strong { color: var(--ink); font-weight: 600; }
+
+  /* ----------------------------------------------------------------- jobs */
+
+  .jobs { background: linear-gradient(180deg, #cfd9ec, rgba(207, 217, 236, 0.2)) no-repeat 4.4mm 6mm / 0.3mm calc(100% - 8mm); }
+  .job { display: grid; grid-template-columns: 9mm 1fr; column-gap: 3.5mm; }
+  .job > :not(.logo) { grid-column: 2; }
+  .job .proof { justify-self: start; }
+  .job + .job { margin-top: 4.4mm; }
+  .job .logo {
+    grid-column: 1;
+    grid-row: 1 / span 9;
+    align-self: start;
+    width: 9mm;
+    height: 9mm;
+    display: grid;
+    place-items: center;
+    border-radius: 2.6mm;
+    background: #fff;
+    border: 0.3mm solid color-mix(in srgb, var(--c) 35%, #fff);
+    box-shadow: inset 0 0 0 0.8mm color-mix(in srgb, var(--c) 9%, #fff);
+    color: var(--c);
+    font-family: "Sora", sans-serif;
+    font-weight: 800;
+    font-size: 9pt;
+  }
+  .job-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 4mm; }
+  .job h3 {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 9.6pt;
+    line-height: 1.25;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .org {
+    margin-top: 0.6mm;
+    font-size: 7.8pt;
+    color: var(--muted);
+  }
+  .org b { color: var(--c); font-weight: 600; }
+  .when { text-align: right; flex-shrink: 0; }
+  .period {
+    display: inline-block;
+    padding: 0.6mm 2.2mm;
+    border-radius: 10mm;
+    background: color-mix(in srgb, var(--c) 11%, #fff);
+    color: color-mix(in srgb, var(--c) 82%, #000);
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 6.6pt;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .dur {
+    display: block;
+    margin-top: 0.8mm;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 6.4pt;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+  }
+  .proof {
+    margin-top: 2mm;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.6mm;
+    padding: 0.8mm 2.4mm;
+    border-radius: 10mm;
+    background: #fff7e6;
+    border: 0.25mm solid #f6d38c;
+    font-size: 7pt;
+    font-weight: 600;
+    color: #8a5a00;
+  }
+  .stars { display: inline-flex; gap: 0.3mm; color: var(--amber); }
+
+  ul.pts { margin-top: 2mm; list-style: none; }
+  ul.pts li {
+    display: flex;
+    gap: 2.6mm;
+    padding-left: 0.4mm;
+    font-size: 7.8pt;
+    line-height: 1.47;
+  }
+  ul.pts li + li { margin-top: 0.6mm; }
+  ul.pts li::before {
+    content: "";
+    flex: 0 0 1.3mm;
+    height: 1.3mm;
+    margin-top: 1.55mm;
+    border-radius: 0.25mm;
+    transform: rotate(45deg);
+    background: var(--c);
+  }
+  .stack {
+    margin-top: 2mm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm;
+  }
+  .stack span {
+    padding: 0.5mm 2mm;
+    border-radius: 10mm;
+    background: var(--panel);
+    border: 0.25mm solid var(--line);
+    font-size: 6.3pt;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  /* -------------------------------------------------------------- aside */
+
+  .aside {
+    background: var(--panel);
+    border: 0.3mm solid #e8edf6;
+    border-radius: 3.6mm;
+    padding: 4.4mm 4.4mm;
+    align-self: start;
+  }
+  .aside .block + .block { margin-top: 4.4mm; }
+  .aside .h { margin-bottom: 2.8mm; }
+
+  .skill-group + .skill-group { margin-top: 2.3mm; }
+  .skill-group p {
+    display: flex;
+    align-items: center;
+    gap: 1.6mm;
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 7.8pt;
+    color: var(--ink);
+  }
+  .skill-group p i {
+    width: 1.8mm; height: 1.8mm; border-radius: 50%;
+    background: var(--c);
+  }
+  .chips { margin-top: 1.5mm; display: flex; flex-wrap: wrap; gap: 1.1mm; }
+  .chips span {
+    padding: 0.4mm 1.7mm;
+    border-radius: 10mm;
+    background: #fff;
+    border: 0.25mm solid #dde4f1;
+    font-size: 6.3pt;
+    font-weight: 500;
+    color: #39445a;
+  }
+
+  .edu h4, .cert h4 {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+    font-size: 8.2pt;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .edu p, .cert p { margin-top: 0.6mm; font-size: 7.3pt; color: var(--muted); }
+  .cert { display: flex; align-items: flex-start; justify-content: space-between; gap: 3mm; }
+  .cert + .cert { margin-top: 1.8mm; }
+  .cert h4 { font-size: 7.6pt; }
+  .cert-src { margin-top: 1.6mm; font-size: 6.6pt; color: var(--faint); }
+  .score {
+    flex-shrink: 0;
+    padding: 0.4mm 1.8mm;
+    border-radius: 10mm;
+    background: #fff;
+    border: 0.25mm solid #cfe7f8;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 6.6pt;
+    color: #0c7fc0;
+  }
+
+  .fl-card {
+    overflow: hidden;
+    border-radius: 3mm;
+    background:
+      radial-gradient(40mm 30mm at 100% 0%, rgba(26, 163, 240, 0.45), transparent 70%),
+      radial-gradient(40mm 30mm at 0% 120%, rgba(155, 123, 255, 0.35), transparent 70%),
+      #0a1020;
+    color: #e6ecfa;
+    padding: 4.2mm 4.4mm;
+  }
+  .fl-top { display: flex; align-items: center; gap: 1.8mm; font-family: "JetBrains Mono", monospace; font-size: 6.4pt; letter-spacing: 0.08em; text-transform: uppercase; color: #9fb0d6; }
+  .fl-top svg { color: var(--fl); }
+  .fl-rating { margin-top: 2.4mm; display: flex; align-items: center; gap: 2mm; }
+  .fl-rating strong { font-family: "Sora", sans-serif; font-size: 17pt; font-weight: 800; color: #fff; line-height: 1; }
+  .fl-rating span { font-size: 7pt; color: #9fb0d6; }
+  .fl-rating .stars { color: var(--amber); }
+  .fl-bars { margin-top: 2.6mm; display: grid; gap: 1.3mm; }
+  .fl-bars div { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.6mm 2mm; font-size: 6.6pt; color: #c3cee8; }
+  .fl-bars div::after {
+    content: "";
+    grid-column: 1 / -1;
+    height: 0.9mm;
+    border-radius: 1mm;
+    background: linear-gradient(90deg, #1aa3f0, #2ee6d6);
+  }
+  .fl-bars b { font-family: "Sora", sans-serif; color: #fff; font-weight: 700; }
+  .fl-link {
+    margin-top: 3mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4mm 2.6mm;
+    border-radius: 10mm;
+    background: rgba(26, 163, 240, 0.16);
+    border: 0.25mm solid rgba(26, 163, 240, 0.45);
+    font-size: 6.8pt;
+    font-weight: 600;
+    color: #fff;
+  }
+  .fl-link svg { margin-left: auto; color: #7fd0ff; }
+
+  .quote {
+    padding: 3mm 3.4mm 2.8mm;
+    border-radius: 2.8mm;
+    background: #fff;
+    border: 0.25mm solid #e0e7f3;
+  }
+  .quote + .quote { margin-top: 2.6mm; }
+  .quote blockquote { margin-top: 1.4mm; font-size: 7.2pt; line-height: 1.55; color: var(--text); font-style: italic; }
+  .quote cite { display: block; margin-top: 1.8mm; font-style: normal; font-size: 6.6pt; font-weight: 600; color: var(--ink); }
+  .quote cite span { display: block; font-weight: 400; color: var(--faint); font-family: "JetBrains Mono", monospace; font-size: 6pt; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.4mm; }
+
+  .expertise li { list-style: none; font-size: 7.3pt; line-height: 1.45; color: var(--muted); }
+  .expertise li + li { margin-top: 1.8mm; }
+  .expertise li b { display: block; font-family: "Sora", sans-serif; font-size: 7.8pt; font-weight: 700; color: var(--ink); }
+
+  /* ------------------------------------------------------------ projects */
+
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6mm; }
+  .proj {
+    padding: 3.1mm 3.4mm 3mm 3.8mm;
+    border-radius: 2.8mm;
+    border: 0.3mm solid var(--line);
+    background: linear-gradient(var(--c), var(--c)) no-repeat left / 0.9mm 100%, #fff;
+    overflow: hidden;
+  }
+  .proj .meta { font-family: "JetBrains Mono", monospace; font-size: 6pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
+  .proj h4 { margin-top: 0.8mm; font-family: "Sora", sans-serif; font-weight: 700; font-size: 8.6pt; line-height: 1.25; color: var(--ink); }
+  .proj .sub { font-size: 7pt; font-weight: 600; color: var(--c); margin-top: 0.3mm; }
+  .proj p.d { margin-top: 1.2mm; font-size: 7pt; line-height: 1.5; color: var(--text); }
+  .proj .tech { margin-top: 1.3mm; font-size: 6.3pt; color: var(--muted); font-weight: 500; }
+
+  .strengths { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 4mm; }
+  .strength { display: flex; gap: 2.4mm; }
+  .strength .num {
+    flex-shrink: 0;
+    width: 6.4mm; height: 6.4mm;
+    display: grid; place-items: center;
+    border-radius: 1.8mm;
+    background: color-mix(in srgb, var(--c) 12%, #fff);
+    color: var(--c);
+    font-family: "Sora", sans-serif; font-weight: 800; font-size: 7pt;
+  }
+  .strength b { display: block; font-family: "Sora", sans-serif; font-weight: 700; font-size: 8pt; color: var(--ink); }
+  .strength span { display: block; margin-top: 0.4mm; font-size: 7.2pt; line-height: 1.45; color: var(--muted); }
+
+  /* --------------------------------------------------------- page chrome */
+
+  .mini {
+    position: relative;
+    background:
+      radial-gradient(60mm 30mm at 92% 0%, rgba(61, 139, 255, 0.5), transparent 70%),
+      radial-gradient(60mm 30mm at 30% 160%, rgba(155, 123, 255, 0.35), transparent 70%),
+      #0a1020;
+    color: #eef3ff;
+    padding: 6.5mm 14mm 5.5mm;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mini .nm { font-family: "Sora", sans-serif; font-weight: 800; font-size: 13pt; letter-spacing: -0.02em; }
+  .mini .nm span { color: #7fb2ff; }
+  .mini .tt { margin-top: 0.6mm; font-size: 7.4pt; color: #9fb0d6; }
+  .mini .links { display: flex; gap: 5mm; font-size: 7.4pt; color: #d6deef; }
+  .mini .links a { display: flex; align-items: center; gap: 1.6mm; }
+  .mini .links svg { color: #7fb2ff; }
+
+  .foot {
+    position: relative;
+    margin: 0 14mm;
+    padding: 3mm 0 5mm;
+    border-top: 0.3mm solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 6.2pt;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+  }
+  .foot b { color: var(--azure); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- ================================================================ PAGE 1 -->
+<section class="page">
+  <header class="hero">
+    <div class="accent-bar"></div>
+    <div class="hero-inner">
+      <div class="hero-top">
+        <div>
+          <span class="status"><i></i>Available for new projects · Remote, worldwide</span>
+          <h1 class="name">Bohdan <span>Andriichuk</span></h1>
+          <p class="title">Senior AI &amp; Full-Stack Developer</p>
+          <p class="focus"><span><b>/</b> AI Products</span><span><b>/</b> LLMs &amp; RAG</span><span><b>/</b> Web</span><span><b>/</b> Mobile</span><span><b>/</b> Integrations</span></p>
+        </div>
+        <div class="photo">
+          <img src="bohdan.jpg" alt="Bohdan Andriichuk" />
+          <span class="badge">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="#f0a20f"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            5.0
+          </span>
+        </div>
+      </div>
+
+      <div class="contacts">
+        <a href="mailto:andriichukbohdan34@gmail.com">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg></span>
+          andriichukbohdan34@gmail.com
+        </a>
+        <a href="https://wa.me/15404436640">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35Z"/><path d="M12.04 2C6.6 2 2.17 6.43 2.17 11.87c0 1.74.46 3.44 1.32 4.94L2 22l5.35-1.4a9.82 9.82 0 0 0 4.69 1.2h.01c5.43 0 9.86-4.43 9.86-9.87A9.8 9.8 0 0 0 19 4.88 9.8 9.8 0 0 0 12.04 2Zm0 1.79c2.16 0 4.19.84 5.72 2.37a8.03 8.03 0 0 1 2.37 5.72c0 4.46-3.63 8.08-8.09 8.08a8.06 8.06 0 0 1-4.11-1.13l-.3-.17-3.05.8.81-2.98-.19-.31a8.04 8.04 0 0 1-1.23-4.3c0-4.45 3.63-8.08 8.07-8.08Z"/></svg></span>
+          +1 540 443 6640
+        </a>
+        <a href="https://t.me/blueW09">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
+          t.me/blueW09
+        </a>
+        <span>
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+          Lutsk, Volyn, Ukraine
+        </span>
+        <a href="https://www.linkedin.com/in/andriichukboh/">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5.5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.3 8.9h3.28V21H3.3V8.9Zm5.72 0h3.15v1.65h.05c.44-.83 1.5-1.71 3.1-1.71 3.31 0 3.92 2.18 3.92 5.02V21h-3.27v-5.45c0-1.3-.02-2.97-1.81-2.97-1.81 0-2.09 1.42-2.09 2.88V21H9.02V8.9Z"/></svg></span>
+          linkedin.com/in/andriichukboh
+        </a>
+        <a href="https://www.freelancer.com/u/bohdan38">
+          <span class="ic"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76 4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548 3.643-3.57 1.13-6.652-4.439-.228Z"/></svg></span>
+          freelancer.com/u/bohdan38
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="stats">
+    <div class="stat" style="--c:#2ee6d6"><div class="v">5+<small>yrs</small></div><div class="l">Shipping production web, AI &amp; mobile software</div></div>
+    <div class="stat" style="--c:#f0a20f">
+      <div class="v">5.0
+        <span class="stars">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+        </span>
+      </div>
+      <div class="l">Freelancer.com rating across 7 client reviews</div>
+    </div>
+    <div class="stat" style="--c:#2f6fed"><div class="v">100<small>%</small></div><div class="l">Freelance jobs delivered on time</div></div>
+    <div class="stat" style="--c:#7c5cff"><div class="v">100<small>%</small></div><div class="l">Freelance jobs delivered on budget</div></div>
+  </div>
+
+  <div class="body">
+    <main>
+      <section class="block">
+        <h2 class="h"><span class="n">01</span>Profile</h2>
+        <p class="summary">
+          Senior AI &amp; Full-Stack Developer with <strong>5+ years</strong> building AI-enabled products, responsive web
+          apps and mobile experiences. I pair full-stack engineering in <strong>React, Next.js, Node.js, Python, Laravel
+          and Flutter</strong> with generative AI — <strong>LLM integrations, RAG pipelines, AI agents and chatbots</strong> —
+          and carry features end to end, from pixel-precise UI to the APIs, payments and AI services behind them.
+        </p>
+      </section>
+
+      <section class="block">
+        <h2 class="h"><span class="n">02</span>Experience</h2>
+        <div class="jobs">
+          <article class="job" style="--c:#1aa3f0">
+            <span class="logo"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76 4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548 3.643-3.57 1.13-6.652-4.439-.228Z"/></svg></span>
+            <div class="job-head">
+              <div>
+                <h3>Independent AI &amp; Full-Stack Developer</h3>
+                <p class="org"><b>Freelancer.com</b> · <span>Remote · International clients</span></p>
+              </div>
+              <div class="when"><span class="period">Feb 2026 — Present</span><span class="dur">Freelance</span></div>
+            </div>
+            <span class="proof">
+              <span class="stars">
+                <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+              </span>
+              5.0 rating · 7 reviews · 100% on time &amp; on budget
+            </span>
+            <ul class="pts">
+              <li>Deliver AI, web and automation projects for international clients, rated 5.0 across seven client reviews.</li>
+              <li>Build custom RAG chatbots that answer from a client’s own PDFs, docs and website content.</li>
+              <li>Rebuilt static HTML designs as a production Next.js site with a custom CMS, deployed on Railway with custom-domain DNS.</li>
+              <li>Automate workflows with Twilio, Zapier and HubSpot, from Elementor-form SMS alerts to landing-page integrations.</li>
+              <li>Shipped WordPress conversions and migrations, Shopify Google Ads tracking fixes, Unreal Engine C++ features and custom 2D/3D software.</li>
+            </ul>
+            <div class="stack"><span>Next.js</span><span>RAG · LLMs</span><span>WordPress</span><span>Zapier</span><span>Twilio</span><span>Unreal C++</span></div>
+          </article>
+
+          <article class="job" style="--c:#2f6fed">
+            <span class="logo">E</span>
+            <div class="job-head">
+              <div>
+                <h3>Full-Stack Developer</h3>
+                <p class="org"><b>Ephorsec</b> · <span>Covertly AI</span></p>
+              </div>
+              <div class="when"><span class="period">May 2023 — Jan 2026</span><span class="dur">2 yrs 9 mos</span></div>
+            </div>
+            <ul class="pts">
+              <li>Developed full-stack web experiences with React, Next.js, Three.js and Node.js, turning product requirements into user-facing features.</li>
+              <li>Contributed to the Covertly AI website with a strong focus on responsive behavior across mobile, tablet and desktop.</li>
+              <li>Implemented AI chat functionality and connected product interfaces with external APIs and supporting services.</li>
+              <li>Built interactive animations and visually engaging frontend experiences, including Three.js-based web elements.</li>
+              <li>Supported ongoing maintenance and iterative improvements with attention to quality, communication and reliable delivery.</li>
+            </ul>
+            <div class="stack"><span>React</span><span>Next.js</span><span>Three.js</span><span>Node.js</span><span>AI Chat</span><span>External APIs</span></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="aside">
+      <section class="block">
+        <h2 class="h">Technical skills</h2>
+        <div class="skill-group" style="--c:#10b3a6">
+          <p><i></i>AI &amp; LLMs</p>
+          <div class="chips"><span>OpenAI</span><span>Claude</span><span>Gemini</span><span>LangChain</span><span>LlamaIndex</span><span>RAG</span><span>AI Agents</span><span>Vector DBs</span><span>AI Chat</span><span>AI Video Generation</span></div>
+        </div>
+        <div class="skill-group" style="--c:#2f6fed">
+          <p><i></i>Frontend</p>
+          <div class="chips"><span>React</span><span>Next.js</span><span>TypeScript</span><span>Three.js</span><span>HTML5</span><span>CSS3</span><span>Tailwind CSS</span><span>UI Animation</span></div>
+        </div>
+        <div class="skill-group" style="--c:#7c5cff">
+          <p><i></i>Backend &amp; Data</p>
+          <div class="chips"><span>Node.js</span><span>Python</span><span>FastAPI</span><span>PHP</span><span>Laravel</span><span>REST</span><span>GraphQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Supabase</span></div>
+        </div>
+        <div class="skill-group" style="--c:#f0a20f">
+          <p><i></i>Mobile &amp; Platforms</p>
+          <div class="chips"><span>Flutter</span><span>WordPress</span><span>Shopify</span><span>Zoho</span><span>Odoo</span></div>
+        </div>
+        <div class="skill-group" style="--c:#ec4f77">
+          <p><i></i>Automation &amp; Delivery</p>
+          <div class="chips"><span>n8n</span><span>Make</span><span>Zapier</span><span>Twilio</span><span>HubSpot</span><span>Webhooks</span><span>Stripe</span><span>Railway</span></div>
+        </div>
+      </section>
+
+
+      <section class="block">
+        <h2 class="h">Education</h2>
+        <div class="edu">
+          <h4>Lutsk National Technical University</h4>
+          <p>Lutsk, Ukraine</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="h">Certifications</h2>
+        <div class="cert">
+          <h4>Freelancer Orientation Exam</h4>
+          <span class="score">85%</span>
+        </div>
+        <div class="cert">
+          <h4>Preferred Freelancer Program SLA Exam</h4>
+          <span class="score">80%</span>
+        </div>
+        <p class="cert-src">Skills exams on Freelancer.com</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="foot">
+    <span><b>Bohdan Andriichuk</b> · Senior AI &amp; Full-Stack Developer</span>
+    <span>01 / 02</span>
+  </footer>
+</section>
+
+<!-- ================================================================ PAGE 2 -->
+<section class="page page-2">
+  <header class="mini">
+    <div class="accent-bar"></div>
+    <div>
+      <p class="nm">Bohdan <span>Andriichuk</span></p>
+      <p class="tt">Senior AI &amp; Full-Stack Developer · Lutsk, Ukraine</p>
+    </div>
+    <div class="links">
+      <a href="mailto:andriichukbohdan34@gmail.com">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
+        andriichukbohdan34@gmail.com
+      </a>
+      <a href="https://www.freelancer.com/u/bohdan38">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76 4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548 3.643-3.57 1.13-6.652-4.439-.228Z"/></svg>
+        freelancer.com/u/bohdan38
+      </a>
+    </div>
+  </header>
+
+  <div class="body">
+    <main>
+      <section class="block">
+        <h2 class="h"><span class="n">02</span>Experience · continued</h2>
+        <div class="jobs">
+          <article class="job" style="--c:#10b3a6">
+            <span class="logo">QA</span>
+            <div class="job-head">
+              <div>
+                <h3>Full-Stack Developer · AI Developer</h3>
+                <p class="org"><b>Quantum Alchemy Group</b> · <span>Cre8tor AI</span></p>
+              </div>
+              <div class="when"><span class="period">Jun 2022 — Mar 2023</span><span class="dur">10 mos</span></div>
+            </div>
+            <ul class="pts">
+              <li>Built the Cre8tor AI website with HTML, CSS and Laravel, contributing to both the product interface and the full-stack application.</li>
+              <li>Created multiple responsive pages with close attention to visual consistency, cross-device behavior and pixel-focused implementation.</li>
+              <li>Implemented AI chat capabilities within the application to support AI-driven user interactions.</li>
+              <li>Integrated AI video-generation functionality, connecting generative features with the surrounding web workflow.</li>
+              <li>Implemented payment integration and supporting user flows, shipping features rapidly across UI, logic and integrations.</li>
+            </ul>
+            <div class="stack"><span>Laravel</span><span>PHP</span><span>HTML</span><span>CSS</span><span>AI Video</span><span>Payments</span></div>
+          </article>
+
+          <article class="job" style="--c:#f0a20f">
+            <span class="logo">S</span>
+            <div class="job-head">
+              <div>
+                <h3>Frontend Developer</h3>
+                <p class="org"><b>Stafflancer</b> · <span>Lutsk, Ukraine</span></p>
+              </div>
+              <div class="when"><span class="period">Apr 2021 — May 2023</span><span class="dur">2 yrs 2 mos</span></div>
+            </div>
+            <ul class="pts">
+              <li>Built several web applications as a frontend developer, delivering custom software and e-commerce services for clients.</li>
+              <li>Translated client requirements into responsive, user-facing interfaces for e-commerce and custom software products.</li>
+            </ul>
+            <div class="stack"><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>E-commerce</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="h"><span class="n">03</span>Selected projects</h2>
+        <div class="projects">
+          <div class="proj" style="--c:#2f6fed">
+            <p class="meta">Ephorsec · 2023 — 2026</p>
+            <h4>Covertly AI</h4>
+            <p class="sub">AI-Enabled Web Experience</p>
+            <p class="d">AI product website that behaves consistently on phone, tablet and desktop — AI chat and API-connected workflows at its core, Three.js motion on top.</p>
+            <p class="tech">React · Next.js · Three.js · Node.js · AI Chat</p>
+          </div>
+          <div class="proj" style="--c:#10b3a6">
+            <p class="meta">Quantum Alchemy · 2022 — 2023</p>
+            <h4>Cre8tor AI</h4>
+            <p class="sub">AI Creative Platform</p>
+            <p class="d">Multi-page AI creative platform where generative video and AI chat are the product, wrapped in responsive pages and a complete payment flow.</p>
+            <p class="tech">Laravel · PHP · HTML · CSS · AI Video · Payments</p>
+          </div>
+          <div class="proj" style="--c:#7c5cff">
+            <p class="meta">Freelance client</p>
+            <h4>Custom AI Chatbot with RAG</h4>
+            <p class="sub">AI · Retrieval-Augmented Generation</p>
+            <p class="d">Assistants grounded in a business’s own PDFs, docs and website, giving context-aware answers for support and lead generation.</p>
+            <p class="tech">RAG · LLMs · LangChain · Vector DB · OpenAI / Claude</p>
+          </div>
+          <div class="proj" style="--c:#c48a4f">
+            <p class="meta">Freelance client</p>
+            <h4>Next.js Website with Custom CMS</h4>
+            <p class="sub">Next.js · Custom CMS</p>
+            <p class="d">Static HTML designs rebuilt as a responsive Next.js site with a CMS dashboard for products, images and copy; Railway deployment and DNS.</p>
+            <p class="tech">Next.js · React · Custom CMS · Railway · DNS</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="h"><span class="n">04</span>Engineering strengths</h2>
+        <div class="strengths">
+          <div class="strength" style="--c:#10b3a6"><span class="num">01</span><div><b>End-to-end ownership</b><span>Interface, backend logic, AI features and integrations, carried from first sketch to production.</span></div></div>
+          <div class="strength" style="--c:#2f6fed"><span class="num">02</span><div><b>Responsive by default</b><span>Mobile, tablet and desktop designed and tested together for a consistent experience.</span></div></div>
+          <div class="strength" style="--c:#7c5cff"><span class="num">03</span><div><b>AI that actually ships</b><span>AI built into practical, user-facing workflows, not left as a standalone demo.</span></div></div>
+          <div class="strength" style="--c:#f0a20f"><span class="num">04</span><div><b>Craft &amp; communication</b><span>Clean implementation, visual detail, delivery speed and clear, proactive communication.</span></div></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="aside">
+      <section class="block">
+        <h2 class="h">Freelancer</h2>
+        <a class="fl-card" href="https://www.freelancer.com/u/bohdan38" style="display:block">
+          <div class="fl-top">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76 4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548 3.643-3.57 1.13-6.652-4.439-.228Z"/></svg>
+            Verified client ratings
+          </div>
+          <div class="fl-rating">
+            <strong>5.0</strong>
+            <span class="stars">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            </span>
+            <span>7 reviews</span>
+          </div>
+          <div class="fl-bars">
+            <div>Quality of work <b>5.0</b></div>
+            <div>Communication <b>5.0</b></div>
+            <div>Expertise <b>5.0</b></div>
+            <div>Professionalism <b>5.0</b></div>
+            <div>Would hire again <b>5.0</b></div>
+          </div>
+          <div class="fl-link"><span>freelancer.com/u/bohdan38</span><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+        </a>
+      </section>
+
+
+      <section class="block">
+        <h2 class="h">Client reviews</h2>
+        <div class="quote">
+          <span class="stars">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+          </span>
+          <blockquote>“Bohdan took the time to read the scope, create a plan, and execute. … I will be working with Bohdan for the next phase of this project and many more to come.”</blockquote>
+          <cite>WordPress Site Conversion from AI-HTML Prototype<span>Freelancer client · Apr 2026</span></cite>
+        </div>
+        <div class="quote">
+          <span class="stars">
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+            <svg width="7" height="7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8a1 1 0 0 1 .9.56l2.38 4.83 5.33.77a1 1 0 0 1 .55 1.7l-3.85 3.76.91 5.3a1 1 0 0 1-1.45 1.06L12 18.27l-4.77 2.5a1 1 0 0 1-1.45-1.05l.91-5.31-3.85-3.76a1 1 0 0 1 .55-1.7l5.33-.77 2.38-4.83A1 1 0 0 1 12 2.8Z"/></svg>
+          </span>
+          <blockquote>“Excellent freelancer! Worked quick and efficiently. Provided answers to all questions and implemented feedback as needed. I definitely recommend him and will hire again.”</blockquote>
+          <cite>Custom 2D/3D Software<span>Freelancer client · May 2026</span></cite>
+        </div>
+      </section>
+      <section class="block">
+        <h2 class="h">Core expertise</h2>
+        <ul class="expertise">
+          <li><b>AI Product Development</b>AI chat, AI video generation, LLM, RAG and agent features in real products</li>
+          <li><b>Frontend Engineering</b>Responsive, animated, pixel-focused interfaces in React, Next.js and Three.js</li>
+          <li><b>Backend Engineering</b>Application logic and API integration in Node.js, Python and Laravel</li>
+          <li><b>Integrations &amp; Automation</b>Third-party APIs, payments and n8n / Zapier / Make workflows</li>
+        </ul>
+      </section>
+
+    </aside>
+  </div>
+
+  <footer class="foot">
+    <span><b>Bohdan Andriichuk</b> · andriichukbohdan34@gmail.com · linkedin.com/in/andriichukboh</span>
+    <span>02 / 02</span>
+  </footer>
+</section>
+
+</body>
+</html>

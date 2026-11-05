@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Sora } from "next/font/google";
-import { profile } from "@/lib/data";
+import { contact, freelancer, profile } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     "Flutter",
     "AI Chat Integration",
     "AI Video Generation",
+    "RAG Chatbot",
+    "LLM Developer",
+    "Freelancer",
+    "Hire AI Developer",
   ],
   authors: [{ name: profile.name }],
   creator: profile.name,
@@ -66,12 +70,32 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+/** schema.org Person — lets search engines tie this site to the public profiles */
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.title,
+  description,
+  image: freelancer.avatar,
+  email: `mailto:${contact.email}`,
+  address: { "@type": "PostalAddress", addressLocality: "Lutsk", addressCountry: "UA" },
+  sameAs: [contact.freelancerLink, contact.linkedinLink],
+  knowsAbout: ["Artificial Intelligence", "Large Language Models", "RAG", "Next.js", "React", "Node.js", "Python"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable} ${mono.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd).replace(/</g, "\\u003c") }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

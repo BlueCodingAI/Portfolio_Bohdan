@@ -94,7 +94,7 @@ function PinnedTrack() {
           <div className="flex w-[30rem] shrink-0 flex-col justify-center pr-6">
             <SectionHeading
               eyebrow="Approach"
-              index="06"
+              index="07"
               title="How I"
               accent="work"
               align="left"
@@ -156,7 +156,7 @@ function StackedList() {
       <div className="mx-auto max-w-2xl">
         <SectionHeading
           eyebrow="Approach"
-          index="06"
+          index="07"
           title="How I"
           accent="work"
           blurb="Four principles that shape every feature I ship."

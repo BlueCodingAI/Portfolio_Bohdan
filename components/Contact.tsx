@@ -2,13 +2,14 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useState, type FormEvent, type ReactNode } from "react";
-import { contact, resume } from "@/lib/data";
+import { contact, freelancer, resume } from "@/lib/data";
 import { Aurora, EASE, MagneticButton, Reveal, SectionHeading, Twinkle } from "@/components/ui";
 import {
   ArrowUpRightIcon,
   CheckIcon,
   CopyIcon,
   DownloadIcon,
+  FreelancerIcon,
   LinkedInIcon,
   MailIcon,
   SendIcon,
@@ -25,6 +26,8 @@ type Channel = {
   copy?: string;
   icon: ReactNode;
   accent: string;
+  /** short proof chip beside the label */
+  badge?: string;
 };
 
 const CHANNELS: Channel[] = [
@@ -66,6 +69,15 @@ const CHANNELS: Channel[] = [
     href: contact.linkedinLink,
     icon: <LinkedInIcon size={19} />,
     accent: "#ffc14d",
+  },
+  {
+    label: "Freelancer",
+    value: contact.freelancer,
+    href: contact.freelancerLink,
+    copy: contact.freelancerLink,
+    icon: <FreelancerIcon size={19} />,
+    accent: "#29b2fe",
+    badge: `★ ${freelancer.rating.toFixed(1)}`,
   },
 ];
 
@@ -116,7 +128,14 @@ function ChannelRow({ channel, index }: { channel: Channel; index: number }) {
         rel="noreferrer noopener"
         className="min-w-0 flex-1 after:absolute after:inset-0 after:rounded-2xl"
       >
-        <span className="block font-mono text-[10px] uppercase tracking-[0.2em] text-fog">{channel.label}</span>
+        <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-fog">
+          {channel.label}
+          {channel.badge && (
+            <span className="whitespace-nowrap rounded-full bg-amber/10 px-2 py-px normal-case tracking-normal text-amber">
+              {channel.badge}
+            </span>
+          )}
+        </span>
         <span className="mt-1 block truncate font-display text-[14px] font-semibold text-snow">{channel.value}</span>
       </a>
 
@@ -311,10 +330,10 @@ export default function Contact() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Contact"
-          index="07"
+          index="08"
           title="Let’s build something"
           accent="intelligent together"
-          blurb="Freelance, contract or full-time — if you have an AI product, a web app or a mobile experience in mind, pick whichever channel suits you."
+          blurb="Freelance, contract or full-time — if you have an AI product, a web app or a mobile experience in mind, reach out on any channel below or hire me through Freelancer."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">

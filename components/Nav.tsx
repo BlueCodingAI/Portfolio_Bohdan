@@ -10,7 +10,14 @@ import {
 import { useEffect, useState } from "react";
 import { contact, navLinks, profile, resume } from "@/lib/data";
 import { useActiveSection, useIntroDone } from "@/lib/hooks";
-import { DownloadIcon, LinkedInIcon, MailIcon, TelegramIcon, WhatsAppIcon } from "@/components/icons";
+import {
+  DownloadIcon,
+  FreelancerIcon,
+  LinkedInIcon,
+  MailIcon,
+  TelegramIcon,
+  WhatsAppIcon,
+} from "@/components/icons";
 import { EASE } from "@/components/ui";
 
 // "hero" is tracked too, so nothing is highlighted while you are at the top
@@ -81,7 +88,8 @@ export default function Nav() {
                 {profile.initials}
               </span>
             </span>
-            <span className="hidden flex-col items-start leading-tight sm:flex">
+            {/* name hides at md–lg, where the seven-link pill needs the room */}
+            <span className="hidden flex-col items-start leading-tight sm:flex md:hidden xl:flex">
               <span className="font-display text-sm font-semibold tracking-wide text-snow">
                 {profile.name}
               </span>
@@ -105,7 +113,7 @@ export default function Nav() {
                   key={link.id}
                   onClick={() => go(link.id)}
                   onPointerEnter={() => setHovered(link.id)}
-                  className={`relative rounded-full px-4 py-2 text-[13px] font-medium transition-colors duration-300 ${
+                  className={`relative rounded-full px-3 py-2 text-[13px] font-medium transition-colors duration-300 lg:px-4 ${
                     isActive ? "text-ink" : "text-mist hover:text-snow"
                   }`}
                 >
@@ -238,6 +246,7 @@ export default function Nav() {
             >
               {[
                 { href: `mailto:${contact.email}`, label: "Email", icon: <MailIcon size={17} /> },
+                { href: contact.freelancerLink, label: "Freelancer", icon: <FreelancerIcon size={17} /> },
                 { href: contact.linkedinLink, label: "LinkedIn", icon: <LinkedInIcon size={17} /> },
                 { href: contact.telegramLink, label: "Telegram", icon: <TelegramIcon size={17} /> },
                 { href: contact.whatsappLink, label: "WhatsApp", icon: <WhatsAppIcon size={17} /> },
