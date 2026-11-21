@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Sora } from "next/font/google";
-import { contact, freelancer, profile } from "@/lib/data";
+import { contact, education, profile } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,7 +22,7 @@ const mono = JetBrains_Mono({
 });
 
 const description =
-  "Portfolio of Bohdan Andriichuk — Senior AI & Full-Stack Developer building AI-enabled products, responsive web apps and mobile experiences with React, Next.js, Three.js, Node.js, Python, Laravel and Flutter.";
+  "Portfolio of Bohdan Andriichuk — Senior AI & Software Engineer building AI-powered applications with LLMs, AI agents and RAG, scalable backends in Python, FastAPI and Node.js, React and Next.js frontends, and cloud architecture.";
 
 export const metadata: Metadata = {
   title: {
@@ -32,21 +32,21 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Bohdan Andriichuk",
-    "AI Developer",
-    "Full-Stack Developer",
+    "Senior AI Engineer",
+    "Senior Software Engineer",
+    "AI Architect",
+    "Backend Engineer",
+    "Full-Stack Engineer",
+    "AI Agents",
+    "LLM",
+    "RAG",
+    "Python",
+    "FastAPI",
+    "Node.js",
     "React",
     "Next.js",
-    "Three.js",
-    "Node.js",
-    "Python",
-    "Laravel",
-    "Flutter",
-    "AI Chat Integration",
-    "AI Video Generation",
-    "RAG Chatbot",
-    "LLM Developer",
-    "Freelancer",
-    "Hire AI Developer",
+    "TypeScript",
+    "Cloud Architecture",
   ],
   authors: [{ name: profile.name }],
   creator: profile.name,
@@ -77,11 +77,22 @@ const personLd = {
   name: profile.name,
   jobTitle: profile.title,
   description,
-  image: freelancer.avatar,
   email: `mailto:${contact.email}`,
   address: { "@type": "PostalAddress", addressLocality: "Lutsk", addressCountry: "UA" },
-  sameAs: [contact.freelancerLink, contact.linkedinLink],
-  knowsAbout: ["Artificial Intelligence", "Large Language Models", "RAG", "Next.js", "React", "Node.js", "Python"],
+  sameAs: [contact.linkedinLink],
+  alumniOf: { "@type": "CollegeOrUniversity", name: education.school },
+  knowsAbout: [
+    "Artificial Intelligence",
+    "Large Language Models",
+    "AI Agents",
+    "Retrieval-Augmented Generation",
+    "Python",
+    "FastAPI",
+    "Node.js",
+    "React",
+    "Next.js",
+    "Cloud Architecture",
+  ],
 };
 
 export default function RootLayout({

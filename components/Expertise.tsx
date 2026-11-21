@@ -4,25 +4,25 @@ import { motion } from "motion/react";
 import type { ReactNode } from "react";
 import { expertise, type Expertise as ExpertiseItem, type ExpertiseKey } from "@/lib/data";
 import { Aurora, EASE, Pill, SectionHeading, SpotlightCard, Twinkle } from "@/components/ui";
-import { CodeIcon, LayersIcon, MobileIcon, PlugIcon, ServerIcon, SparkIcon } from "@/components/icons";
+import { AgentIcon, CloudIcon, CodeIcon, SearchIcon, ServerIcon, SparkIcon } from "@/components/icons";
 
 const ICONS: Record<ExpertiseKey, ReactNode> = {
   ai: <SparkIcon size={22} />,
-  frontend: <CodeIcon size={22} />,
+  agents: <AgentIcon size={22} />,
+  rag: <SearchIcon size={22} />,
   backend: <ServerIcon size={22} />,
-  mobile: <MobileIcon size={22} />,
-  platforms: <LayersIcon size={22} />,
-  integrations: <PlugIcon size={22} />,
+  fullstack: <CodeIcon size={22} />,
+  cloud: <CloudIcon size={22} />,
 };
 
 /* ------------------------------------------------------------- visuals --- */
 
-/** A little AI conversation with a "thinking" equaliser — idles forever. */
+/** A little RAG-style conversation with a "thinking" equaliser — idles forever. */
 function AIVisual() {
   return (
     <div className="relative flex w-full max-w-[17rem] flex-col gap-2.5 font-mono text-[11px]">
       <div className="ml-auto rounded-2xl rounded-br-sm bg-azure px-3.5 py-2 text-white shadow-[0_8px_24px_-8px_rgba(61,139,255,0.7)] animate-bob">
-        Generate a product video
+        Summarize our Q3 contracts
       </div>
       <div className="flex w-fit items-center gap-2.5 rounded-2xl rounded-bl-sm glass px-3.5 py-2.5">
         <span className="relative grid h-5 w-5 place-items-center">
@@ -44,7 +44,7 @@ function AIVisual() {
         style={{ animationDelay: "-1.4s" }}
       >
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-        Video ready · 00:12
+        Answer ready · 4 sources
       </div>
     </div>
   );
@@ -75,19 +75,21 @@ function FlowLink({ delay = 0 }: { delay?: number }) {
 }
 
 const FLOW_TARGETS = [
-  { label: "Payments", color: "#ffc14d" },
-  { label: "AI Services", color: "#2ee6d6" },
-  { label: "CRM / CMS", color: "#9b7bff" },
+  { label: "Staging", color: "#ffc14d" },
+  { label: "Production", color: "#2ee6d6" },
+  { label: "Monitoring", color: "#9b7bff" },
 ];
 
-/** Data packets flowing from the product through an API layer to the services behind it. */
-function IntegrationVisual() {
+/** Release packets flowing from a commit through the CI/CD pipeline out to the cloud. */
+function DeliveryVisual() {
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:gap-0">
-      <FlowNode label="Product UI" sub="web · mobile" color="#3d8bff" />
+      <FlowNode label="git push" sub="main" color="#3d8bff" />
       <FlowLink />
-      <FlowNode label="API Layer" sub="logic · auth" color="#2ee6d6" />
-      <FlowLink delay={0.9} />
+      <FlowNode label="CI/CD" sub="test · build" color="#2ee6d6" />
+      <FlowLink delay={0.6} />
+      <FlowNode label="Docker" sub="image" color="#9b7bff" />
+      <FlowLink delay={1.2} />
       <div className="flex shrink-0 flex-wrap justify-center gap-2 sm:flex-col">
         {FLOW_TARGETS.map((t, i) => (
           <motion.div
@@ -108,7 +110,7 @@ function IntegrationVisual() {
 /* ----------------------------------------------------------------- card --- */
 
 function Card({ item, index, className = "" }: { item: ExpertiseItem; index: number; className?: string }) {
-  const wide = item.key === "ai" || item.key === "integrations";
+  const wide = item.key === "ai" || item.key === "cloud";
 
   return (
     <motion.div
@@ -123,7 +125,7 @@ function Card({ item, index, className = "" }: { item: ExpertiseItem; index: num
         <div
           className={`relative flex h-full flex-col gap-8 ${
             item.key === "ai" ? "md:flex-row md:items-center" : ""
-          } ${item.key === "integrations" ? "lg:flex-row lg:items-center" : ""}`}
+          } ${item.key === "cloud" ? "lg:flex-row lg:items-center" : ""}`}
         >
           <div className={`flex flex-col ${wide ? "lg:max-w-md" : ""} ${item.key === "ai" ? "md:flex-1" : ""}`}>
             <div className="flex items-center justify-between">
@@ -157,9 +159,9 @@ function Card({ item, index, className = "" }: { item: ExpertiseItem; index: num
               <AIVisual />
             </div>
           )}
-          {item.key === "integrations" && (
+          {item.key === "cloud" && (
             <div className="flex flex-1 items-center justify-center lg:pl-6">
-              <IntegrationVisual />
+              <DeliveryVisual />
             </div>
           )}
         </div>
@@ -178,11 +180,11 @@ function Card({ item, index, className = "" }: { item: ExpertiseItem; index: num
 
 const SPANS: Record<ExpertiseKey, string> = {
   ai: "md:col-span-2",
-  frontend: "",
+  agents: "",
+  rag: "",
   backend: "",
-  mobile: "",
-  platforms: "",
-  integrations: "md:col-span-2 lg:col-span-3",
+  fullstack: "",
+  cloud: "md:col-span-2 lg:col-span-3",
 };
 
 export default function Expertise() {
@@ -199,7 +201,7 @@ export default function Expertise() {
           index="02"
           title="Six ways I"
           accent="move a product forward"
-          blurb="From the AI feature at the heart of the product to the payment flow at the edge of it — one developer, the whole path."
+          blurb="From the language model at the heart of an application to the pipeline that ships it — AI engineering on strong software fundamentals."
         />
 
         <div className="mt-20 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

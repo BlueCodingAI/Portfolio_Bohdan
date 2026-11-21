@@ -38,8 +38,8 @@ summary, roles, jobs, projects, skills or contact details there and every sectio
 | Name, roles, bio, contacts, projects    | `lib/data.ts`                  |
 | Colours, glass, glow, keyframes         | `app/globals.css`              |
 | Résumé PDF (download links)             | `public/Bohdan-Andriichuk-Resume.pdf` |
-| Freelancer stats, portfolio, reviews    | `lib/data.ts` → `freelancer`, `freelanceWork`, `clientReviews` |
-| Freelancer screenshots + avatar (WebP)  | `public/freelancer/`           |
+| Work history (mirrors LinkedIn)         | `lib/data.ts` → `experience`   |
+| Client review stats + quotes            | `lib/data.ts` → `reviewSummary`, `clientReviews` |
 | Hero particle shapes + shaders          | `components/ParticleMorph.tsx` |
 | Background neural network               | `components/NeuralBackground.tsx` |
 | Animated project previews               | `components/ProjectMocks.tsx`  |
@@ -67,8 +67,8 @@ the result over `public/Bohdan-Andriichuk-Resume.pdf`.
 - **Journey** — a timeline spine that fills (with a comet head) as you scroll.
 - **Work** — animated product previews: an AI chat that resizes across desktop / tablet /
   mobile, and an AI video studio that types a prompt, renders and plays a clip.
-- **Freelance** — Freelancer.com profile card, counting stats and rating bars, a portfolio
-  gallery that opens in a keyboard-friendly lightbox, and masonry client reviews.
+- **Reviews** — counting rating stats, category rating bars and masonry client reviews,
+  linked to their source on Freelancer.com.
 - **Approach** — on desktop the section pins and scrolls sideways.
 - **Contact** — copy-to-clipboard channels and a quick-message form that opens the visitor's
   mail app (nothing is stored).

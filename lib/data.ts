@@ -8,29 +8,31 @@ export const profile = {
   firstName: "Bohdan",
   lastName: "Andriichuk",
   initials: "BA",
-  title: "Senior AI & Full-Stack Developer",
-  focus: ["AI Products", "Web", "Mobile", "Integrations"],
+  title: "Senior AI & Software Engineer",
+  /** giant outline words in the second marquee row */
+  focus: ["AI Agents", "LLMs & RAG", "Backend", "Full-Stack", "Cloud"],
   /** cycled through in the hero with a decode/scramble effect */
   roles: [
-    "Senior AI & Full-Stack Developer",
-    "AI Product Developer",
-    "React · Next.js · Three.js",
-    "Node.js · Python · Laravel",
-    "Flutter Mobile Developer",
+    "Senior AI & Software Engineer",
+    "AI Agents · LLMs · RAG",
+    "Python · FastAPI · Node.js",
+    "React · Next.js · TypeScript",
+    "Cloud Architecture · DevOps",
   ],
   location: "Lutsk, Volyn, Ukraine",
   city: "Lutsk, Ukraine",
   timeZone: "Europe/Kyiv",
   tagline:
-    "I build AI-enabled products, responsive web apps and mobile experiences — from pixel-precise interfaces to the APIs, payments and AI services behind them.",
+    "I build AI-powered applications and scalable software — LLM, agent and RAG systems on top of solid backend engineering, modern full-stack interfaces and production-ready cloud infrastructure.",
   /** the large paragraph that lights up word by word as you scroll */
   intro:
-    "I turn product ideas into AI-enabled software people actually use — responsive web apps, mobile experiences and end-to-end features that hold together from the first pixel to the last API call.",
+    "I build intelligent, reliable and maintainable software that solves real business challenges — AI engineering on strong software fundamentals, from architecture design to production.",
   /** words in `intro` that get the gradient treatment */
-  introHighlights: ["AI-enabled", "responsive", "mobile", "end-to-end"],
+  introHighlights: ["intelligent", "reliable", "maintainable", "AI"],
   summary: [
-    "My toolkit spans React, Next.js and Three.js on the frontend, Node.js, Python and PHP/Laravel on the backend, and Flutter for mobile — plus WordPress, Zoho and Odoo when a business already runs on them.",
-    "I have shipped AI chat and AI video-generation features, third-party API integrations and payment workflows inside real products — and I stay with those products after launch, through iterative improvements and ongoing maintenance.",
+    "I’m a Senior AI & Software Engineer specializing in AI-powered applications, full-stack development, backend engineering and scalable software architecture. I work across the whole software development lifecycle — requirements analysis and architecture design, implementation, API integration, testing, deployment and optimization.",
+    "Most of my work combines LLMs, AI agents and RAG with Python, FastAPI, Node.js and TypeScript services, React and Next.js interfaces, and Docker-based cloud deployments. What I care about most is pairing AI engineering with strong software engineering fundamentals to ship applications that are practical, secure and production-ready.",
+    "I’m open to remote opportunities, including Senior AI Engineer, Senior Software Engineer, AI Architect, Backend Engineer and Full-Stack Engineer roles.",
   ],
 };
 
@@ -43,7 +45,7 @@ export const contact = {
   telegramLink: "https://t.me/blueW09",
   linkedin: "in/andriichukboh",
   linkedinLink: "https://www.linkedin.com/in/andriichukboh/",
-  freelancer: "freelancer.com/u/bohdan38",
+  /** source of the client reviews */
   freelancerLink: "https://www.freelancer.com/u/bohdan38",
 };
 
@@ -54,20 +56,21 @@ export const resume = {
 };
 
 export const stats = [
-  { value: 5, suffix: "+", label: "Years shipping production software" },
-  { value: 2, suffix: "", label: "AI platforms delivered" },
-  { value: 13, suffix: "", label: "Technologies across the stack" },
-  { value: 3, suffix: "", label: "Screen classes, one experience" },
+  { value: 10, suffix: "+", label: "Years building production software" },
+  { value: 4, suffix: "", label: "Engineering teams since 2016" },
+  { value: 4, suffix: "", label: "Core areas: AI, backend, full-stack, cloud" },
+  { value: 7, suffix: "", label: "Five-star client reviews" },
 ];
 
 export const education = {
   school: "Lutsk National Technical University",
   location: "Lutsk, Ukraine",
+  period: "2012 — 2016",
 };
 
 /* ------------------------------------------------------------- expertise --- */
 
-export type ExpertiseKey = "ai" | "frontend" | "backend" | "mobile" | "platforms" | "integrations";
+export type ExpertiseKey = "ai" | "agents" | "rag" | "backend" | "fullstack" | "cloud";
 
 export type Expertise = {
   key: ExpertiseKey;
@@ -77,60 +80,61 @@ export type Expertise = {
   accent: string;
 };
 
+/** The "Core Areas of Expertise" from the LinkedIn About section. */
 export const expertise: Expertise[] = [
   {
     key: "ai",
-    title: "AI Product Development",
+    title: "AI Engineering & LLM Applications",
     blurb:
-      "AI chat experiences, AI video-generation integrations and AI-enabled user workflows — built into the product people use every day, not bolted on as a demo.",
-    tags: ["AI Chat", "AI Video Generation", "AI Workflows"],
+      "Intelligent applications built on large language models and generative AI — LLM integrations, prompt engineering and context management, plus model deployment and performance optimization for production.",
+    tags: ["LLMs", "Generative AI", "Prompt Engineering", "Context Management"],
     accent: "#2ee6d6",
   },
   {
-    key: "frontend",
-    title: "Frontend Engineering",
+    key: "agents",
+    title: "AI Agents & Automation",
     blurb:
-      "React, Next.js and Three.js interfaces with responsive layouts, smooth animation and pixel-focused detail.",
-    tags: ["React", "Next.js", "Three.js"],
-    accent: "#3d8bff",
-  },
-  {
-    key: "backend",
-    title: "Backend Engineering",
-    blurb:
-      "Application logic and API work in Node.js, Python and PHP/Laravel that keeps features fast and dependable.",
-    tags: ["Node.js", "Python", "Laravel"],
+      "AI agents and workflow orchestration that turn multi-step business processes into reliable, hands-off automation.",
+    tags: ["AI Agents", "Orchestration", "Automation"],
     accent: "#9b7bff",
   },
   {
-    key: "mobile",
-    title: "Mobile Development",
+    key: "rag",
+    title: "RAG & Semantic Search",
     blurb:
-      "Flutter-based mobile applications that carry the same product quality from the desktop to the phone in your pocket.",
-    tags: ["Flutter", "Cross-device"],
+      "Retrieval-Augmented Generation with embeddings and semantic search, so answers come from your own data instead of guesswork.",
+    tags: ["RAG", "Embeddings", "Semantic Search"],
     accent: "#ffc14d",
   },
   {
-    key: "platforms",
-    title: "Business Platforms",
+    key: "backend",
+    title: "Backend & Software Engineering",
     blurb:
-      "WordPress, Zoho and Odoo implementations for businesses that run on CMS and CRM platforms.",
-    tags: ["WordPress", "Zoho", "Odoo"],
+      "Python, FastAPI, Node.js and TypeScript services — RESTful APIs, microservices and distributed systems with asynchronous processing built in.",
+    tags: ["Python", "FastAPI", "Node.js", "REST APIs"],
+    accent: "#3d8bff",
+  },
+  {
+    key: "fullstack",
+    title: "Full-Stack Development",
+    blurb:
+      "API-driven web applications and modern interfaces in React, Next.js and TypeScript, on database designs made to scale.",
+    tags: ["React", "Next.js", "TypeScript"],
     accent: "#ff6b8b",
   },
   {
-    key: "integrations",
-    title: "Product Integrations",
+    key: "cloud",
+    title: "Cloud & DevOps",
     blurb:
-      "Third-party APIs, payment integration and feature-to-service connectivity that turn separate systems into one coherent product.",
-    tags: ["Third-party APIs", "Payments", "Service connectivity"],
+      "Cloud-based application architecture and deployment with Docker, CI/CD workflows, infrastructure automation and monitoring — the practices that keep software reliable and maintainable in production.",
+    tags: ["Docker", "CI/CD", "Infrastructure Automation", "Monitoring"],
     accent: "#2ee6d6",
   },
 ];
 
 /* ---------------------------------------------------------------- skills --- */
 
-export type SkillGroupKey = "frontend" | "backend" | "ai" | "mobile" | "delivery";
+export type SkillGroupKey = "ai" | "backend" | "fullstack" | "cloud" | "engineering";
 
 export type SkillGroup = {
   key: SkillGroupKey;
@@ -142,135 +146,134 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    key: "frontend",
-    name: "Frontend",
-    blurb: "Interfaces that feel fast, look sharp and behave on every screen.",
-    accent: "#3d8bff",
-    skills: ["React", "Next.js", "Three.js", "HTML5", "CSS3", "Responsive UI", "UI Animation"],
+    key: "ai",
+    name: "AI & LLMs",
+    blurb: "Language models, agents and retrieval wired into real applications.",
+    accent: "#2ee6d6",
+    skills: ["LLMs", "Generative AI", "AI Agents", "RAG", "Embeddings", "Semantic Search", "Prompt Engineering", "Vector DBs"],
   },
   {
     key: "backend",
     name: "Backend",
-    blurb: "Application logic and integrations that keep products running.",
+    blurb: "Services and APIs that stay fast and dependable under real load.",
+    accent: "#3d8bff",
+    skills: ["Python", "FastAPI", "Node.js", "TypeScript", "REST APIs", "Microservices", "Async Processing"],
+  },
+  {
+    key: "fullstack",
+    name: "Full-Stack",
+    blurb: "API-driven web apps and modern interfaces, end to end.",
     accent: "#9b7bff",
-    skills: ["Node.js", "Python", "PHP", "Laravel", "API Integration", "App Logic"],
+    skills: ["React", "Next.js", "JavaScript", "TypeScript", "Database Design", "PostgreSQL"],
   },
   {
-    key: "ai",
-    name: "AI Features",
-    blurb: "AI capabilities wired into practical, user-facing workflows.",
-    accent: "#2ee6d6",
-    skills: ["AI Chat", "AI Video Generation", "AI-Enabled Features", "External AI APIs"],
-  },
-  {
-    key: "mobile",
-    name: "Mobile & CMS",
-    blurb: "Cross-device apps and the business platforms companies run on.",
+    key: "cloud",
+    name: "Cloud & DevOps",
+    blurb: "Architecture, deployment and the automation that keeps production healthy.",
     accent: "#ffc14d",
-    skills: ["Flutter", "WordPress", "Zoho", "Odoo"],
+    skills: ["Cloud Architecture", "Docker", "CI/CD", "Infra Automation", "Monitoring"],
   },
   {
-    key: "delivery",
-    name: "Product Delivery",
-    blurb: "Everything between “it works on my machine” and a product people pay for.",
+    key: "engineering",
+    name: "Engineering Practice",
+    blurb: "The fundamentals that make software secure and built to last.",
     accent: "#ff6b8b",
-    skills: ["Payment Integration", "Cross-Device", "Maintenance", "Client Communication"],
+    skills: ["Software Architecture", "Requirements Analysis", "Testing", "Debugging", "Performance Tuning", "Distributed Systems"],
   },
 ];
 
 /** fed to the scrolling ticker under the hero */
 export const marqueeTech = [
+  "Python",
+  "FastAPI",
+  "Node.js",
+  "TypeScript",
   "React",
   "Next.js",
-  "Three.js",
-  "Node.js",
-  "Python",
-  "PHP",
-  "Laravel",
-  "Flutter",
-  "WordPress",
-  "Zoho",
-  "Odoo",
-  "HTML5",
-  "CSS3",
-  "AI Chat",
-  "AI Video Generation",
-  "Payment Integration",
+  "LLMs",
+  "AI Agents",
+  "RAG",
+  "Embeddings",
+  "Semantic Search",
+  "Microservices",
+  "REST APIs",
+  "Docker",
+  "CI/CD",
+  "Cloud Architecture",
 ];
 
 /* ------------------------------------------------------------ experience --- */
 
 export type Experience = {
   company: string;
+  /** letters in the company badge on the timeline */
+  monogram: string;
   role: string;
   period: string;
   duration: string;
   highlights: string[];
   stack: string[];
-  /** small proof chip next to the dates, e.g. a rating */
-  badge?: string;
-  /** external profile or company page */
-  link?: { href: string; label: string };
 };
 
+/** Work history exactly as listed on LinkedIn (titles, companies, dates). */
 export const experience: Experience[] = [
   {
-    company: "Freelancer.com",
-    role: "Independent AI & Full-Stack Developer",
-    period: "Feb 2026 — Present",
-    duration: "Freelance",
-    badge: "★ 5.0 · 7 reviews",
-    link: { href: contact.freelancerLink, label: "Freelancer profile" },
+    company: "AutomateBoring",
+    monogram: "AB",
+    role: "Senior AI & Software Engineer",
+    period: "Nov 2023 — Sep 2026",
+    duration: "2 yrs 11 mos",
     highlights: [
-      "Delivering AI, web and automation projects for international clients — rated 5.0 across seven client reviews, 100% on time and on budget.",
-      "Built custom RAG chatbots that answer from a client's own PDFs, docs and website content instead of generic model knowledge.",
-      "Rebuilt static HTML designs as a production Next.js site with a custom CMS, deployed on Railway with custom-domain DNS.",
-      "Automated business workflows with Twilio, Zapier and HubSpot — from Elementor-form SMS alerts to landing-page integrations.",
-      "Shipped WordPress conversions and site migrations, and fixed Shopify Google Ads conversion tracking.",
-      "Implemented Unreal Engine C++ features, custom 2D/3D software and AI-generated music and social video content.",
+      "Designed and built AI-powered applications on large language models — LLM integrations, prompt engineering and context management for production use.",
+      "Developed AI agents and orchestrated multi-step workflows that automate business processes end to end.",
+      "Implemented Retrieval-Augmented Generation pipelines with embeddings and semantic search to ground answers in company data.",
+      "Built backend services and RESTful APIs in Python, FastAPI and Node.js, with asynchronous processing for long-running AI tasks.",
+      "Shipped React and Next.js interfaces for AI features, connected to the services behind them through clean, typed APIs.",
+      "Deployed and monitored applications in the cloud with Docker and CI/CD, and optimized model and system performance in production.",
     ],
-    stack: ["Next.js", "RAG · LLMs", "WordPress", "Zapier", "Twilio", "Unreal C++"],
+    stack: ["Python", "FastAPI", "LLMs", "AI Agents", "RAG", "Docker"],
   },
   {
-    company: "Ephorsec",
-    role: "Full-Stack Developer",
-    period: "May 2023 — Jan 2026",
-    duration: "2 yrs 9 mos",
+    company: "OneMind Technologies",
+    monogram: "OM",
+    role: "Full Stack Software Engineer",
+    period: "Mar 2020 — Oct 2023",
+    duration: "3 yrs 8 mos",
     highlights: [
-      "Developed and enhanced full-stack web experiences with React, Next.js, Three.js and Node.js across frontend and backend feature work.",
-      "Contributed to the Covertly AI website with a strong focus on responsive behaviour across mobile, tablet and desktop.",
-      "Implemented AI chat functionality and connected product interfaces with external APIs and supporting services.",
-      "Built interactive animations and visually engaging frontend experiences, including Three.js-based web elements.",
-      "Turned product requirements into functional, user-facing features while keeping them consistent across devices.",
-      "Supported ongoing maintenance and iterative improvements with attention to quality, communication and reliable delivery.",
+      "Developed full-stack web applications with React, Next.js, Node.js and TypeScript, from database design to the user interface.",
+      "Designed RESTful APIs and backend services and integrated third-party platforms, keeping systems reliable as usage grew.",
+      "Split larger features into microservices and asynchronous jobs to improve scalability and performance.",
+      "Worked across the full lifecycle — requirements analysis, architecture design, implementation, testing and deployment.",
+      "Containerized services with Docker and set up CI/CD workflows for faster, more predictable releases.",
     ],
-    stack: ["React", "Next.js", "Three.js", "Node.js", "AI Chat", "External APIs"],
+    stack: ["React", "Next.js", "Node.js", "TypeScript", "REST APIs", "Docker"],
   },
   {
-    company: "Quantum Alchemy Group",
-    role: "Full-Stack Developer · AI Developer",
-    period: "Jun 2022 — Mar 2023",
-    duration: "10 mos",
+    company: "Empat",
+    monogram: "E",
+    role: "Full Stack Engineer",
+    period: "Nov 2017 — Mar 2020",
+    duration: "2 yrs 5 mos",
     highlights: [
-      "Built the Cre8tor AI website with HTML, CSS and Laravel, contributing to both the product interface and the full-stack application.",
-      "Created multiple responsive pages with close attention to visual consistency, cross-device behaviour and pixel-focused implementation.",
-      "Implemented AI chat capabilities within the application to support AI-driven user interactions.",
-      "Integrated AI video-generation functionality, connecting generative features with the surrounding web workflow.",
-      "Implemented payment integration and supporting user flows for a production-ready product experience.",
-      "Delivered rapid feature implementation across UI, application logic and external integrations.",
+      "Built web applications for client products across the frontend and backend with JavaScript, React, Node.js and Python.",
+      "Implemented API-driven features and integrations, turning product requirements into working, tested software.",
+      "Designed database schemas and application logic for scalable, maintainable products.",
+      "Collaborated with designers, product managers and QA to ship features on schedule.",
     ],
-    stack: ["Laravel", "PHP", "HTML", "CSS", "AI Video", "Payments"],
+    stack: ["JavaScript", "React", "Node.js", "Python", "REST APIs", "SQL"],
   },
   {
-    company: "Stafflancer",
-    role: "Frontend Developer",
-    period: "Apr 2021 — May 2023",
-    duration: "2 yrs 2 mos",
+    company: "GOTOMA Software House",
+    monogram: "G",
+    role: "Software Engineer",
+    period: "Aug 2016 — Nov 2017",
+    duration: "1 yr 4 mos",
     highlights: [
-      "Built several web applications as a frontend developer, delivering custom software and e-commerce services for clients.",
-      "Translated client requirements into responsive, user-facing interfaces for e-commerce and custom software products.",
+      "Built and maintained features for client web applications across the stack.",
+      "Wrote backend logic and APIs in Python and JavaScript, and tracked down and fixed bugs in production code.",
+      "Built the habits that still shape my work — debugging, testing and writing clean, maintainable code.",
     ],
-    stack: ["JavaScript", "HTML5", "CSS3", "E-commerce"],
+    stack: ["Python", "JavaScript", "HTML", "CSS", "SQL", "Git"],
   },
 ];
 
@@ -281,8 +284,8 @@ export type Project = {
   index: string;
   title: string;
   subtitle: string;
-  org: string;
-  period: string;
+  /** short category chip shown above the title */
+  kind: string;
   role: string;
   description: string;
   highlights: string[];
@@ -297,9 +300,8 @@ export const projects: Project[] = [
     index: "01",
     title: "Covertly AI",
     subtitle: "AI-Enabled Web Experience",
-    org: "Ephorsec",
-    period: "2023 — 2026",
-    role: "Full-Stack Developer",
+    kind: "AI chat · Web app",
+    role: "Full-stack & AI engineering",
     description:
       "An AI product website built to feel equally at home on a phone, a tablet and a widescreen — with AI chat and API-connected workflows at its core and Three.js-driven motion on top.",
     highlights: [
@@ -316,13 +318,12 @@ export const projects: Project[] = [
     index: "02",
     title: "Cre8tor AI",
     subtitle: "AI Creative Platform",
-    org: "Quantum Alchemy Group",
-    period: "2022 — 2023",
-    role: "Full-Stack · AI Developer",
+    kind: "Generative AI · Platform",
+    role: "Full-stack & AI integration",
     description:
       "A multi-page AI creative platform where generative video and AI chat are the product — wrapped in responsive, pixel-focused pages and a complete payment flow.",
     highlights: [
-      "Multi-page AI-focused web product built with HTML, CSS and Laravel.",
+      "Multi-page AI-focused web product with a full-stack application behind it.",
       "AI chat and AI video generation integrated as core product features.",
       "Responsive, pixel-focused pages plus payment functionality for end-user workflows.",
     ],
@@ -332,21 +333,14 @@ export const projects: Project[] = [
   },
 ];
 
-/* ------------------------------------------------------------ freelancer --- */
+/* --------------------------------------------------------------- reviews --- */
 
-/** Public Freelancer.com profile — figures as shown on the profile page. */
-export const freelancer = {
+/** Client feedback from completed Freelancer.com projects — figures as shown on the profile. */
+export const reviewSummary = {
+  source: "Freelancer.com",
   url: contact.freelancerLink,
-  handle: "@bohdan38",
-  avatar: "/freelancer/bohdan.webp",
-  headline: "AI & Full-Stack Developer | LLMs, RAG & Chatbots",
   rating: 5.0,
   reviewCount: 7,
-  hourlyRate: "$35",
-  memberSince: "Feb 2026",
-  location: "Lutsk, Ukraine",
-  languages: "English",
-  timeZone: "Europe / Kyiv",
   stats: [
     { value: 5, decimals: 1, suffix: "", label: "Overall rating" },
     { value: 100, decimals: 0, suffix: "%", label: "Jobs on time" },
@@ -360,112 +354,7 @@ export const freelancer = {
     { label: "Professionalism", value: 5.0 },
     { label: "Would hire again", value: 5.0 },
   ],
-  qualifications: [
-    { name: "Freelancer Orientation Exam", score: "85%" },
-    { name: "Preferred Freelancer Program SLA Exam", score: "80%" },
-  ],
-  /** a short pick from the skills listed on the profile */
-  topSkills: [
-    "LLMs",
-    "RAG",
-    "AI Agents",
-    "LangChain",
-    "Next.js",
-    "TypeScript",
-    "Python",
-    "FastAPI",
-    "n8n",
-    "Supabase",
-  ],
 };
-
-export type WorkImage = { src: string; width: number; height: number; alt: string };
-
-export type FreelanceWork = {
-  id: string;
-  title: string;
-  category: string;
-  summary: string;
-  points: string[];
-  stack: string[];
-  accent: string;
-  images: WorkImage[];
-};
-
-/** Portfolio items from the Freelancer profile (screenshots live in /public/freelancer). */
-export const freelanceWork: FreelanceWork[] = [
-  {
-    id: "nextjs-cms",
-    title: "Custom Next.js Website with CMS",
-    category: "Next.js · Custom CMS",
-    summary:
-      "Turned a smart-home studio's static HTML designs into a fully responsive, production-ready Next.js site — then gave the team a CMS so they never need a developer to update it.",
-    points: [
-      "Static designs rebuilt on a clean, scalable Next.js architecture with optimized performance.",
-      "Custom CMS dashboard for products, logos, descriptions, images and design sections.",
-      "Production deployment on Railway, with the GoDaddy domain and DNS configured end to end.",
-    ],
-    stack: ["Next.js", "React", "Custom CMS", "Railway", "DNS"],
-    accent: "#c9a27a",
-    images: [
-      { src: "/freelancer/cms-hero.webp", width: 1600, height: 801, alt: "Smart-home website hero: “Intelligence Designed.” with a living-room scene and control panel" },
-      { src: "/freelancer/cms-ecosystem.webp", width: 1600, height: 799, alt: "“Seamless Integration” product grid: lighting, thermostat, security, audio, garage, shades, locks and Wi-Fi" },
-      { src: "/freelancer/cms-environments.webp", width: 1600, height: 803, alt: "“Spaces tailored to your rhythm” section with residential, commercial and hospitality cards" },
-    ],
-  },
-  {
-    id: "grabfood",
-    title: "GrabFood E-Commerce Redesign",
-    category: "Next.js · E-commerce",
-    summary:
-      "Full-stack developer on a Next.js redesign of the GrabFood food-delivery storefront — built to get hungry visitors from a location search to a restaurant in seconds.",
-    points: [
-      "Location-first hero with delivery search, promo carousels and a cuisine grid for fast browsing.",
-      "Content sections, FAQ, app-download prompts and a full footer directory, responsive across devices.",
-      "Clear communication and strategic input that kept the project smooth from redesign to delivery.",
-    ],
-    stack: ["Next.js", "React", "Full-stack", "E-commerce"],
-    accent: "#00b14f",
-    images: [
-      { src: "/freelancer/grabfood-hero.webp", width: 1600, height: 918, alt: "GrabFood home page with a delivery-location search and promotions in Singapore" },
-      { src: "/freelancer/grabfood-full.webp", width: 1200, height: 2778, alt: "Full GrabFood landing page: promos, cuisine categories, FAQ, app download and footer" },
-    ],
-  },
-  {
-    id: "rag-chatbot",
-    title: "Custom AI Chatbot with RAG",
-    category: "AI · Retrieval-Augmented Generation",
-    summary:
-      "AI assistants grounded in a business's own PDFs, docs and website, so customers get context-aware answers instead of robotic, made-up ones.",
-    points: [
-      "Retrieval-Augmented Generation pipeline that answers from your own content.",
-      "Responses stay tied to source material, which keeps hallucinations down.",
-      "Built for support and lead generation — answering questions while qualifying visitors.",
-    ],
-    stack: ["RAG", "LLMs", "LangChain", "Vector DB", "OpenAI · Claude"],
-    accent: "#2ee6d6",
-    images: [
-      { src: "/freelancer/rag-chatbot.webp", width: 1000, height: 750, alt: "Custom AI chatbot and lead generation, RAG-based" },
-    ],
-  },
-  {
-    id: "wordpress-migration",
-    title: "Full Website Migration to WordPress",
-    category: "WordPress · Migration",
-    summary:
-      "Moving businesses from Wix, Squarespace or Shopify to WordPress without losing the organic traffic they've built — and modernizing the stack on the way.",
-    points: [
-      "Migrations from Wix, Squarespace and Shopify into a maintainable WordPress build.",
-      "SEO and organic traffic protected throughout the move.",
-      "Infrastructure upgraded during the migration, not just copied across.",
-    ],
-    stack: ["WordPress", "SEO", "Migration", "Hosting"],
-    accent: "#3d8bff",
-    images: [
-      { src: "/freelancer/wordpress-migration.webp", width: 1000, height: 749, alt: "Migrate your website to WordPress" },
-    ],
-  },
-];
 
 export type ClientReview = {
   project: string;
@@ -535,28 +424,28 @@ export const clientReviews: ClientReview[] = [
 
 /* ------------------------------------------------------------- strengths --- */
 
-export type StrengthIcon = "layers" | "devices" | "spark" | "chat";
+export type StrengthIcon = "layers" | "server" | "spark" | "shield";
 
 export const strengths: { title: string; body: string; icon: StrengthIcon }[] = [
   {
     title: "End-to-end ownership",
-    body: "Interface, backend logic, AI features and external integrations — I carry a feature from the first sketch to production without details getting lost in hand-offs.",
+    body: "Requirements analysis, architecture design, implementation, testing, deployment and optimization — I own the whole lifecycle, so nothing gets lost in hand-offs.",
     icon: "layers",
   },
   {
-    title: "Responsive by default",
-    body: "Mobile, tablet and desktop are designed and tested together, so the experience stays consistent wherever people open it.",
-    icon: "devices",
+    title: "Built to scale",
+    body: "Microservices, asynchronous processing and cloud deployments designed so systems stay fast and reliable as usage grows.",
+    icon: "server",
   },
   {
     title: "AI that actually ships",
-    body: "I integrate AI capabilities into practical, user-facing workflows rather than treating AI as a standalone demo.",
+    body: "LLMs, agents and RAG built into practical, user-facing workflows — production features, not standalone demos.",
     icon: "spark",
   },
   {
-    title: "Craft & communication",
-    body: "Clean implementation, visual detail, delivery speed and clear communication — the things that keep a product maintainable long after launch.",
-    icon: "chat",
+    title: "Secure & production-ready",
+    body: "Testing, debugging, monitoring and engineering best practices that keep software secure and maintainable long after launch.",
+    icon: "shield",
   },
 ];
 
@@ -568,6 +457,6 @@ export const navLinks = [
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Journey" },
   { id: "projects", label: "Work" },
-  { id: "freelance", label: "Freelance" },
+  { id: "reviews", label: "Reviews" },
   { id: "contact", label: "Contact" },
 ];

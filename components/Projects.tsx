@@ -61,9 +61,8 @@ function ProjectRow({ project, flip }: { project: Project; flip: boolean }) {
           </span>
           <span className="h-px w-10" style={{ background: project.accent }} />
           <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-mist">
-            {project.org}
+            {project.kind}
           </span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-fog">{project.period}</span>
         </motion.div>
 
         <div className="mt-5 overflow-hidden pb-1">

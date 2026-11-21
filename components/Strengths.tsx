@@ -4,13 +4,13 @@ import { motion, useMotionValue, useScroll, useSpring, useTransform } from "moti
 import { useEffect, useRef, type ReactNode } from "react";
 import { strengths, type StrengthIcon } from "@/lib/data";
 import { EASE, MagneticButton, SectionHeading, SpotlightCard } from "@/components/ui";
-import { ArrowRightIcon, ChatIcon, DevicesIcon, LayersIcon, SparkIcon } from "@/components/icons";
+import { ArrowRightIcon, LayersIcon, ServerIcon, ShieldCheckIcon, SparkIcon } from "@/components/icons";
 
 const ICONS: Record<StrengthIcon, ReactNode> = {
   layers: <LayersIcon size={26} />,
-  devices: <DevicesIcon size={26} />,
+  server: <ServerIcon size={26} />,
   spark: <SparkIcon size={26} />,
-  chat: <ChatIcon size={26} />,
+  shield: <ShieldCheckIcon size={26} />,
 };
 
 const ACCENTS = ["#2ee6d6", "#3d8bff", "#9b7bff", "#ffc14d"];

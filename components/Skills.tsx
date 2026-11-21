@@ -4,14 +4,14 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState, type ReactNode } from "react";
 import { skillGroups, type SkillGroupKey } from "@/lib/data";
 import { Aurora, EASE, SectionHeading, Twinkle } from "@/components/ui";
-import { CodeIcon, LayersIcon, RocketIcon, ServerIcon, SparkIcon } from "@/components/icons";
+import { CloudIcon, CodeIcon, LayersIcon, ServerIcon, SparkIcon } from "@/components/icons";
 
 const ICONS: Record<SkillGroupKey, (size: number) => ReactNode> = {
-  frontend: (s) => <CodeIcon size={s} />,
-  backend: (s) => <ServerIcon size={s} />,
   ai: (s) => <SparkIcon size={s} />,
-  mobile: (s) => <LayersIcon size={s} />,
-  delivery: (s) => <RocketIcon size={s} />,
+  backend: (s) => <ServerIcon size={s} />,
+  fullstack: (s) => <CodeIcon size={s} />,
+  cloud: (s) => <CloudIcon size={s} />,
+  engineering: (s) => <LayersIcon size={s} />,
 };
 
 /* ---------------------------------------------------------------- orbit --- */
@@ -106,8 +106,8 @@ export default function Skills() {
           eyebrow="Toolkit"
           index="03"
           title="A stack that spans"
-          accent="pixels to pipelines"
-          blurb="Pick a constellation to see what orbits it — the tools I reach for across frontend, backend, AI, mobile and delivery."
+          accent="prompts to production"
+          blurb="Pick a constellation to see what orbits it — the tools I reach for across AI, backend, full-stack, cloud and everyday engineering practice."
         />
 
         <div className="mt-20 grid grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">

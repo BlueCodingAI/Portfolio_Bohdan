@@ -6,7 +6,6 @@ import { contact, navLinks, profile, resume } from "@/lib/data";
 import {
   ClockIcon,
   DownloadIcon,
-  FreelancerIcon,
   LinkedInIcon,
   MailIcon,
   TelegramIcon,
@@ -55,7 +54,6 @@ export default function Footer() {
 
   const socials = [
     { href: `mailto:${contact.email}`, label: "Email", icon: <MailIcon size={15} /> },
-    { href: contact.freelancerLink, label: "Freelancer", icon: <FreelancerIcon size={15} /> },
     { href: contact.linkedinLink, label: "LinkedIn", icon: <LinkedInIcon size={15} /> },
     { href: contact.telegramLink, label: "Telegram", icon: <TelegramIcon size={15} /> },
     { href: contact.whatsappLink, label: "WhatsApp", icon: <WhatsAppIcon size={15} /> },
