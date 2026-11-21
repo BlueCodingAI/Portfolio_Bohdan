@@ -7,11 +7,11 @@ import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Expertise from "@/components/Expertise";
 import Footer from "@/components/Footer";
-import Freelance from "@/components/Freelance";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Preloader from "@/components/Preloader";
 import Projects from "@/components/Projects";
+import Reviews from "@/components/Reviews";
 import Skills from "@/components/Skills";
 import Strengths from "@/components/Strengths";
 import TechMarquee from "@/components/TechMarquee";
@@ -36,7 +36,7 @@ export default function Page() {
         <Skills />
         <Experience />
         <Projects />
-        <Freelance />
+        <Reviews />
         <Strengths />
         <Contact />
       </main>

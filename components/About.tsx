@@ -75,12 +75,12 @@ type Token = { text: string; cls: string };
 
 const SOURCE = [
   "const bohdan = {",
-  '  role: "Senior AI & Full-Stack Developer",',
+  '  role: "Senior AI & Software Engineer",',
   '  based: "Lutsk, Ukraine",',
-  '  focus: ["AI products", "Web", "Mobile"],',
-  '  frontend: ["React", "Next.js", "Three.js"],',
-  '  backend: ["Node.js", "Python", "Laravel"],',
-  '  mobile: "Flutter",',
+  '  ai: ["LLMs", "AI Agents", "RAG"],',
+  '  backend: ["Python", "FastAPI", "Node.js"],',
+  '  frontend: ["React", "Next.js", "TypeScript"],',
+  '  cloud: ["Docker", "CI/CD"],',
   "  openToWork: true,",
   "};",
 ];
@@ -227,9 +227,9 @@ export default function About() {
         <SectionHeading
           eyebrow="About me"
           index="01"
-          title="Building products where"
-          accent="AI meets craft"
-          blurb="Senior AI & full-stack developer — equally at home polishing an animation curve and wiring up the API, payment or AI service behind it."
+          title="Building software where"
+          accent="AI meets engineering"
+          blurb="Senior AI & software engineer — designing LLM-powered systems and the scalable backends, interfaces and cloud infrastructure that carry them into production."
         />
 
         <div className="mt-20 grid grid-cols-1 gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -257,7 +257,9 @@ export default function About() {
                       <p className="mt-1.5 font-display text-[14px] font-semibold leading-snug text-snow">
                         {education.school}
                       </p>
-                      <p className="mt-1 text-[12px] text-mist">{education.location}</p>
+                      <p className="mt-1 text-[12px] text-mist">
+                        {education.location} · {education.period}
+                      </p>
                     </div>
                   </div>
                 </SpotlightCard>
@@ -273,7 +275,7 @@ export default function About() {
                       <p className="mt-1.5 font-display text-[14px] font-semibold leading-snug text-snow">
                         {profile.location}
                       </p>
-                      <p className="mt-1 text-[12px] text-mist">Working with teams worldwide</p>
+                      <p className="mt-1 text-[12px] text-mist">Open to remote roles worldwide</p>
                     </div>
                   </div>
                 </SpotlightCard>

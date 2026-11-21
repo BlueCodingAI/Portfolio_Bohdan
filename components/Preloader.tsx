@@ -2,15 +2,15 @@
 
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { profile } from "@/lib/data";
+import { profile, stats } from "@/lib/data";
 import { markIntroDone, useReducedMotion } from "@/lib/hooks";
 
 /** Fake boot log — each line lands as the progress counter passes its share. */
 const BOOT = [
   { cmd: "init portfolio --owner bohdan", status: "" },
   { cmd: "loading neural modules", status: "ok" },
-  { cmd: "compiling 3+ years of experience", status: "ok" },
-  { cmd: "wiring ai · web · mobile", status: "ok" },
+  { cmd: `compiling ${stats[0].value}${stats[0].suffix} years of experience`, status: "ok" },
+  { cmd: "wiring llms · agents · rag", status: "ok" },
   { cmd: "rendering interface", status: "ready" },
 ];
 

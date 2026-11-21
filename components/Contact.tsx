@@ -2,14 +2,13 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useState, type FormEvent, type ReactNode } from "react";
-import { contact, freelancer, resume } from "@/lib/data";
+import { contact, resume } from "@/lib/data";
 import { Aurora, EASE, MagneticButton, Reveal, SectionHeading, Twinkle } from "@/components/ui";
 import {
   ArrowUpRightIcon,
   CheckIcon,
   CopyIcon,
   DownloadIcon,
-  FreelancerIcon,
   LinkedInIcon,
   MailIcon,
   SendIcon,
@@ -40,6 +39,14 @@ const CHANNELS: Channel[] = [
     accent: "#2ee6d6",
   },
   {
+    label: "LinkedIn",
+    value: contact.linkedin,
+    href: contact.linkedinLink,
+    copy: contact.linkedinLink,
+    icon: <LinkedInIcon size={19} />,
+    accent: "#ffc14d",
+  },
+  {
     label: "Email · Outlook",
     value: contact.emailAlt,
     href: `mailto:${contact.emailAlt}`,
@@ -62,22 +69,6 @@ const CHANNELS: Channel[] = [
     copy: contact.telegram,
     icon: <TelegramIcon size={19} />,
     accent: "#9b7bff",
-  },
-  {
-    label: "LinkedIn",
-    value: contact.linkedin,
-    href: contact.linkedinLink,
-    icon: <LinkedInIcon size={19} />,
-    accent: "#ffc14d",
-  },
-  {
-    label: "Freelancer",
-    value: contact.freelancer,
-    href: contact.freelancerLink,
-    copy: contact.freelancerLink,
-    icon: <FreelancerIcon size={19} />,
-    accent: "#29b2fe",
-    badge: `★ ${freelancer.rating.toFixed(1)}`,
   },
 ];
 
@@ -170,7 +161,7 @@ function ChannelRow({ channel, index }: { channel: Channel; index: number }) {
 
 /* ------------------------------------------------------------------ form --- */
 
-const TOPICS = ["New project", "Full-time role", "Contract work", "Just saying hi"];
+const TOPICS = ["Full-time role", "Contract work", "New project", "Just saying hi"];
 
 function Field({
   id,
@@ -279,7 +270,7 @@ function QuickMessage() {
 
         <div className="mt-6 grid gap-4">
           <Field id="cf-name" label="Your name" value={name} onChange={setName} required />
-          <Field id="cf-message" label="A few words about the project" value={message} onChange={setMessage} textarea required />
+          <Field id="cf-message" label="A few words about the role or project" value={message} onChange={setMessage} textarea required />
         </div>
 
         <div className="mt-7 flex flex-wrap items-center gap-4">
@@ -333,7 +324,7 @@ export default function Contact() {
           index="08"
           title="Let’s build something"
           accent="intelligent together"
-          blurb="Freelance, contract or full-time — if you have an AI product, a web app or a mobile experience in mind, reach out on any channel below or hire me through Freelancer."
+          blurb="Full-time, contract or project work — if you’re hiring for an AI, backend or full-stack role, or have an AI product in mind, reach out on any channel below."
         />
 
         <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">

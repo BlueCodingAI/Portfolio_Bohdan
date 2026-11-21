@@ -4,11 +4,11 @@ import { AnimatePresence, motion, useScroll, useSpring, useTransform } from "mot
 import { useRef, useState } from "react";
 import { experience, type Experience as ExperienceItem } from "@/lib/data";
 import { Aurora, EASE, Pill, SectionHeading, TiltCard, Twinkle, hexToRgb } from "@/components/ui";
-import { ArrowUpRightIcon, FreelancerIcon, PlusIcon } from "@/components/icons";
+import { PlusIcon } from "@/components/icons";
 
 const ACCENTS = ["#3d8bff", "#2ee6d6", "#9b7bff", "#ffc14d"];
 const VISIBLE = 3;
-// earliest start date on the timeline, e.g. "Apr 2021"
+// earliest start date on the timeline, e.g. "Aug 2016"
 const careerStart = experience[experience.length - 1]?.period.split(" — ")[0] ?? "";
 
 function Entry({ item, index }: { item: ExperienceItem; index: number }) {
@@ -17,12 +17,6 @@ function Entry({ item, index }: { item: ExperienceItem; index: number }) {
   const [expanded, setExpanded] = useState(false);
   const extra = item.highlights.length - VISIBLE;
 
-  const monogram = item.company
-    .split(" ")
-    .map((w) => w[0])
-    .join("")
-    .slice(0, 2);
-  const isFreelancer = item.link?.href.includes("freelancer.com");
 
   return (
     <motion.li
@@ -89,7 +83,7 @@ function Entry({ item, index }: { item: ExperienceItem; index: number }) {
                 className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl font-display text-base font-bold"
                 style={{ background: `${accent}1a`, color: accent, boxShadow: `inset 0 0 18px ${accent}30` }}
               >
-                {isFreelancer ? <FreelancerIcon size={22} /> : monogram}
+                {item.monogram}
               </span>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
@@ -102,31 +96,12 @@ function Entry({ item, index }: { item: ExperienceItem; index: number }) {
                   <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-fog">
                     {item.duration}
                   </span>
-                  {item.badge && (
-                    <span className="rounded-full bg-amber/10 px-2.5 py-1 font-mono text-[10px] font-medium text-amber">
-                      {item.badge}
-                    </span>
-                  )}
                 </div>
                 <h3 className="mt-3 font-display text-[20px] font-bold leading-snug tracking-tight text-snow">
                   {item.role}
                 </h3>
-                <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-display text-[14px] font-medium">
-                  <span style={{ color: accent }}>{item.company}</span>
-                  {item.link && (
-                    <a
-                      href={item.link.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="group inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-fog transition-colors hover:text-snow"
-                    >
-                      {item.link.label}
-                      <ArrowUpRightIcon
-                        size={11}
-                        className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                      />
-                    </a>
-                  )}
+                <p className="mt-1 font-display text-[14px] font-medium" style={{ color: accent }}>
+                  {item.company}
                 </p>
               </div>
             </div>
@@ -208,7 +183,7 @@ export default function Experience() {
           index="04"
           title="Where I have been"
           accent="shipping"
-          blurb="Three companies, an independent client practice and one through-line: turning product requirements into features people actually use. Scroll the line to follow the path."
+          blurb="Ten years across four engineering teams — from software engineer to senior AI & software engineer — with one through-line: turning requirements into reliable software people actually use. Scroll the line to follow the path."
         />
 
         <div ref={ref} className="relative mt-20">

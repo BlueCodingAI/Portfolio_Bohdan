@@ -12,7 +12,6 @@ import { contact, navLinks, profile, resume } from "@/lib/data";
 import { useActiveSection, useIntroDone } from "@/lib/hooks";
 import {
   DownloadIcon,
-  FreelancerIcon,
   LinkedInIcon,
   MailIcon,
   TelegramIcon,
@@ -94,7 +93,7 @@ export default function Nav() {
                 {profile.name}
               </span>
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-fog">
-                AI · Full-Stack
+                AI · Software
               </span>
             </span>
           </button>
@@ -246,7 +245,6 @@ export default function Nav() {
             >
               {[
                 { href: `mailto:${contact.email}`, label: "Email", icon: <MailIcon size={17} /> },
-                { href: contact.freelancerLink, label: "Freelancer", icon: <FreelancerIcon size={17} /> },
                 { href: contact.linkedinLink, label: "LinkedIn", icon: <LinkedInIcon size={17} /> },
                 { href: contact.telegramLink, label: "Telegram", icon: <TelegramIcon size={17} /> },
                 { href: contact.whatsappLink, label: "WhatsApp", icon: <WhatsAppIcon size={17} /> },

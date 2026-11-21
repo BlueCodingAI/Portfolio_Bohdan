@@ -316,3 +316,24 @@ export const BriefcaseIcon = (p: IconProps) => (
     <path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18" />
   </Stroke>
 );
+
+export const CloudIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M7 18.5a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 9.5a4.5 4.5 0 0 1-.5 9H7Z" />
+  </Stroke>
+);
+
+/** a small robot head — AI agents */
+export const AgentIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <rect x="4" y="8" width="16" height="12" rx="3" />
+    <path d="M12 8V4.5M12 4.5h.01M9 13.5h.01M15 13.5h.01M9.5 17h5M2 13v2M22 13v2" />
+  </Stroke>
+);
+
+export const SearchIcon = (p: IconProps) => (
+  <Stroke {...p}>
+    <circle cx="11" cy="11" r="6.5" />
+    <path d="m16 16 4.5 4.5" />
+  </Stroke>
+);
